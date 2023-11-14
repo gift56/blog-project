@@ -10,6 +10,8 @@ module.exports = {
       colors: {
         softbg: "#f0f0f0",
         dark: "#626262",
+        darkBg: "#0f172a",
+        darkText: "#ddd",
       },
     },
   },
