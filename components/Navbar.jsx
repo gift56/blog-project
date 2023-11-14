@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ThemeToggle } from ".";
+import { AuthLink, ThemeToggle } from ".";
 
 const Navbar = () => {
   const socialIcons = [
@@ -24,7 +24,7 @@ const Navbar = () => {
       text: "About",
     },
   ];
-  
+
   return (
     <header className="w-full flex items-center justify-between py-4">
       <div className="hidden md:flex items-center justify-start gap-2">
@@ -46,6 +46,16 @@ const Navbar = () => {
       </Link>
       <nav className="flex items-center justify-center gap-4">
         <ThemeToggle />
+        {navLinks.map((item) => (
+          <Link
+            key={item.text}
+            href={item.to}
+            className="hidden md:flex hover:border-b-2 h-full border-black transition-all text-lg font-normal"
+          >
+            {item.text}
+          </Link>
+        ))}
+        <AuthLink />
       </nav>
     </header>
   );
