@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
 
 const Navbar = () => {
+  const socialIcons = [
+    "/facebook.png",
+    "/instagram.png",
+    "/tiktok.png",
+    "/youtube.png",
+  ];
   return (
-    <div>Navbar</div>
-  )
-}
+    <header className="w-full flex items-center justify-between py-4">
+      <div className="flex items-center justify-start gap-2">
+        
+      </div>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;
