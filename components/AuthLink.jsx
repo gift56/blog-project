@@ -1,6 +1,5 @@
-import React from "react";
-
 const AuthLink = () => {
+  const status = "Notauthenticated";
   return <div>AuthLink</div>;
 };
 
