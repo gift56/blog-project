@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <header className="w-full flex items-center justify-between py-4">
-      <div className="hidden md:flex items-center justify-start gap-2">
+      <div className="hidden lg:flex items-center justify-start gap-2">
         {socialIcons.map((item, index) => (
           <Image
             src={item}
