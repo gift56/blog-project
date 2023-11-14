@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ThemeToggle } from ".";
 
 const Navbar = () => {
   const socialIcons = [
@@ -24,10 +25,13 @@ const Navbar = () => {
       </div>
       <Link
         href="/"
-        className="select-none text-2xl font-bold text-center md:text-3xl text-black"
+        className="select-none text-2xl font-bold md:text-3xl text-black"
       >
         Devblog
       </Link>
+      <nav className="flex items-center justify-center gap-4">
+        <ThemeToggle />
+      </nav>
     </header>
   );
 };

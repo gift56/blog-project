@@ -10,6 +10,7 @@ import MenuCategories from "./MenuCategories";
 import MenuPost from "./MenuPost";
 import Navbar from "./Navbar";
 import Pagination from "./Pagination";
+import ThemeToggle from "./ThemeToggle";
 
 export {
   AuthLink,
@@ -24,4 +25,5 @@ export {
   MenuPost,
   Navbar,
   Pagination,
+  ThemeToggle,
 };
