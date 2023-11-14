@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaBars } from "react-icons/fa";
@@ -106,9 +107,22 @@ const AuthLink = () => {
                 <Link href="/write" className="text-lg font-normal">
                   Write
                 </Link>
-                <span className="text-lg font-normal cursor-pointer">Logout</span>
+                <span className="text-lg font-normal cursor-pointer">
+                  Logout
+                </span>
               </>
             )}
+            <div className="flex flex-wrap items-center justify-start gap-2">
+              {socialIcons.map((item, index) => (
+                <Image
+                  src={item}
+                  alt="social icons"
+                  width={24}
+                  height={24}
+                  key={index}
+                />
+              ))}
+            </div>
           </nav>
         </div>
       </div>
