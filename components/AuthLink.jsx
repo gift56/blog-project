@@ -106,7 +106,7 @@ const AuthLink = () => {
                 <Link href="/write" className="text-lg font-normal">
                   Write
                 </Link>
-                <span className="text-lg font-normal">Logout</span>
+                <span className="text-lg font-normal cursor-pointer">Logout</span>
               </>
             )}
           </nav>
