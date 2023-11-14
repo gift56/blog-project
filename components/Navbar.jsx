@@ -10,6 +10,21 @@ const Navbar = () => {
     "/tiktok.png",
     "/youtube.png",
   ];
+  const navLinks = [
+    {
+      to: "/",
+      text: "Homepage",
+    },
+    {
+      to: "/",
+      text: "Contact",
+    },
+    {
+      to: "/",
+      text: "About",
+    },
+  ];
+  
   return (
     <header className="w-full flex items-center justify-between py-4">
       <div className="hidden md:flex items-center justify-start gap-2">
