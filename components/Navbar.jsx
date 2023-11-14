@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const socialIcons = [
@@ -10,7 +11,7 @@ const Navbar = () => {
   ];
   return (
     <header className="w-full flex items-center justify-between py-4">
-      <div className="flex items-center justify-start gap-2">
+      <div className="hidden md:flex items-center justify-start gap-2">
         {socialIcons.map((item, index) => (
           <Image
             src={item}
@@ -21,6 +22,12 @@ const Navbar = () => {
           />
         ))}
       </div>
+      <Link
+        href="/"
+        className="select-none text-2xl font-bold text-center md:text-3xl text-black"
+      >
+        Devblog
+      </Link>
     </header>
   );
 };
