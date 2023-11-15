@@ -60,10 +60,10 @@ const CategoryList = () => {
   return (
     <section className="py-9 w-full flex flex-col items-start justify-start gap-6">
       <h3 className="text-3xl font-semibold md:text-4xl">Popular Categories</h3>
-      <div className="w-full flex flex-wrap justify-between gap-6">
+      <div className="w-full flex flex-wrap justify-between gap-4">
         {catergoryStyles.map((item) => (
           <Link
-            href="/blog?cat=style"
+            href={`/blog?cat=${item.slug}`}
             key={item.slug}
             className={`flex items-center gap-3 capitalize w-[50%] md:w-[40%] lg:w-[25%] xl:w-[15%] justify-center rounded-lg h-16 ${colorRender(
               item.slug
