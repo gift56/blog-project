@@ -24,7 +24,7 @@ const CategoryList = () => {
       <div className="w-full flex flex-wrap justify-between gap-6">
         <Link
           href="/blog?cat=style"
-          className={`flex items-center gap-3 capitalize w-[15%] justify-center rounded-lg h-16 ${colorRender(
+          className={`flex items-center gap-3 capitalize w-[50%] md:w-[40%] lg:w-[25%] xl:w-[15%] justify-center rounded-lg h-16 ${colorRender(
             "coding"
           )}`}
           // key={item._id}
@@ -36,7 +36,7 @@ const CategoryList = () => {
             height={32}
             className="object-cover !w-10 !h-10 rounded-full"
           />
-          <span className="text-base font-normal md:text-lg">Style</span>
+          <span className="text-base font-medium md:text-lg">Style</span>
         </Link>
       </div>
     </section>
