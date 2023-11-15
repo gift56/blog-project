@@ -12,7 +12,15 @@ const Featured = () => {
           <Image src="/p1.jpeg" alt="" fill className="object-cover" />
         </div>
         <div className="flex-1 flex flex-col items-start justify-start gap-6">
-          <h3></h3>
+          <h3 className="text-2xl font-semibold md:text-4xl">
+            Unveiling the Hidden Wonders of Jumabi
+          </h3>
+          <p className="text-base font-normal md:text-lg">
+            🏝️ Nestled in the heart of Zizal, Jumabi is a
+            captivating oasis that promises an escape like no other. Picture
+            yourself strolling along pristine beaches, the powdery sand beneath
+            your toes, as the sun paints the sky in hues of orange and pink.
+          </p>
         </div>
       </div>
     </section>
