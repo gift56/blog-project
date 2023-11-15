@@ -29,7 +29,13 @@ const CategoryList = () => {
           )}`}
           // key={item._id}
         >
-          <Image src="/style.png" alt="" width={32} height={32} className="" />
+          <Image
+            src="/style.png"
+            alt=""
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
         </Link>
       </div>
     </section>
