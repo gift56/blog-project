@@ -1,5 +1,7 @@
 const CategoryList = () => {
-  return <section className="">CategoryList</section>;
+  return <section className="py-5 w-full">
+    
+  </section>;
 };
 
 export default CategoryList;
