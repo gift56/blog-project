@@ -1,5 +1,5 @@
 const CategoryList = () => {
-  return <section>CategoryList</section>;
+  return <section className="">CategoryList</section>;
 };
 
 export default CategoryList;
