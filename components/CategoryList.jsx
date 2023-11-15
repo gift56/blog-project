@@ -1,7 +1,5 @@
-import React from "react";
-
 const CategoryList = () => {
-  return <div>CategoryList</div>;
+  return <section>CategoryList</section>;
 };
 
 export default CategoryList;
