@@ -12,9 +12,9 @@ const Featured = () => {
           <Image
             src="/p1.jpeg"
             alt="island"
-            className="object-cover !w-full md:h-full"
-            width={100}
-            height={100}
+            width={500}
+            height={500}
+            className="!w-full md:!h-[500px] rounded-lg"
           />
         </div>
         <div className="w-full md:flex-1 flex flex-col items-start justify-start gap-6">
@@ -27,7 +27,12 @@ const Featured = () => {
             pristine beaches, the powdery sand beneath your toes, as the sun
             paints the sky in hues of orange and pink.
           </p>
-          <button type="button" className="outline-none py-3 px-5 rounded w-fit hover:shadow-md transition-all">Read More</button>
+          <button
+            type="button"
+            className="outline-none py-3 px-5 rounded w-fit hover:shadow-md transition-all"
+          >
+            Read More
+          </button>
         </div>
       </div>
     </section>
