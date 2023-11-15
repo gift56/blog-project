@@ -8,10 +8,16 @@ const Featured = () => {
         <b>Hey 👋, Efe's here!</b> Discover my stories and creative ideas.
       </h1>
       <div className="flex flex-col lg:flex-row items-center gap-7 w-full">
-        <div className="flex-1 h-[500px] relative">
-          <Image src="/p1.jpeg" alt="" fill className="object-cover" />
+        <div className="w-full md:flex-1 md:h-[500px] relative">
+          <Image
+            src="/p1.jpeg"
+            alt="island"
+            className="object-cover !w-full md:h-full"
+            width={100}
+            height={100}
+          />
         </div>
-        <div className="flex-1 flex flex-col items-start justify-start gap-6">
+        <div className="w-full md:flex-1 flex flex-col items-start justify-start gap-6">
           <h3 className="text-2xl font-semibold md:text-4xl">
             Unveiling the Hidden Wonders of Jumabi
           </h3>
@@ -21,7 +27,7 @@ const Featured = () => {
             pristine beaches, the powdery sand beneath your toes, as the sun
             paints the sky in hues of orange and pink.
           </p>
-          <button className="">Read More</button>
+          <button type="button" className="outline-none py-3 px-5 rounded w-fit hover:shadow-md transition-all">Read More</button>
         </div>
       </div>
     </section>
