@@ -44,10 +44,10 @@ const CategoryList = () => {
       title: "Travel",
     },
     {
-      src: "/style.png",
-      alt: "style",
-      slug: "style",
-      title: "Style",
+      src: "/culture.png",
+      alt: "culture",
+      slug: "culture",
+      title: "Culture",
     },
     {
       src: "/style.png",
