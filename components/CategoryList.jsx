@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const CategoryList = () => {
@@ -24,10 +25,12 @@ const CategoryList = () => {
         <Link
           href="/blog?cat=style"
           className={`flex items-center gap-3 capitalize w-[15%] justify-center rounded-lg h-20 ${colorRender(
-            "style"
+            "coding"
           )}`}
           // key={item._id}
-        ></Link>
+        >
+          <Image src="/style.png" alt="" width={32} height={32} className="" />
+        </Link>
       </div>
     </section>
   );
