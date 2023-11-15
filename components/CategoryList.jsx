@@ -50,10 +50,10 @@ const CategoryList = () => {
       title: "Culture",
     },
     {
-      src: "/style.png",
-      alt: "style",
-      slug: "style",
-      title: "Style",
+      src: "/coding.png",
+      alt: "coding",
+      slug: "coding",
+      title: "Coding",
     },
   ];
 
