@@ -2,7 +2,7 @@ import React from 'react'
 
 const CardList = () => {
   return (
-    <div>CardList</div>
+    <section>CardList</section>
   )
 }
 
