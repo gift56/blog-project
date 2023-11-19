@@ -9,7 +9,7 @@ const PostDetailPage = () => {
           <h1 className="text-3xl font-bold md:text-5xl text-darkBg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
-          <div className="w-full flex flex-col md:flex-row items-start justify-start gap-3">
+          <div className="w-full flex items-start justify-start gap-3">
             <div className="w-12 h-12 md:w-14 md:h-14">
               <Image
                 src="/p1.jpeg"
@@ -50,6 +50,7 @@ const PostDetailPage = () => {
           />
         </div>
       </div>
+      <div className="w-full flex flex-col lg:flex-row items-start justify-start gap-6"></div>
     </main>
   );
 };
