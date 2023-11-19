@@ -26,7 +26,7 @@ const Card = () => {
           illum officia quisquam aut nam voluptate deleniti veritatis.
         </p>
         <Link
-          href={`/posts/""`}
+          href={`/post/""`}
           className="pb-2 w-max relative before:content-[''] before:absolute before:bottom-0 before:left-[50%] before:translate-x-[-50%] before:w-[25%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300"
         >
           Read More
