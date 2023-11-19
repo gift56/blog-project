@@ -48,7 +48,17 @@ const WritePage = () => {
           ))}
         </select>
       </div>
-      <button type="submit" className="absolute top-0 right-0 bg-primary text-white py-2 px-6 border-primary border rounded-2xl">Publish</button>
+      <div className="relative flex items-center gap-6 h-[700px]">
+        <button type="button" className="" onClick={() => setOpen(!open)}>
+          <Image src="/plus.png" alt="" width={16} height={16} />
+        </button>
+      </div>
+      <button
+        type="submit"
+        className="absolute top-0 right-0 bg-primary text-white py-2 px-6 border-primary border rounded-2xl"
+      >
+        Publish
+      </button>
     </main>
   );
 };
