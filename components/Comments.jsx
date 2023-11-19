@@ -28,8 +28,33 @@ const Comments = () => {
           </button>
         </div>
       ) : (
-        <Link href="/login" className="w-fit px-5 h-12 flex items-center justify-center border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed transition-all duration-300">Login to write a comment</Link>
+        <Link
+          href="/login"
+          className="w-fit px-5 h-12 flex items-center justify-center border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed transition-all duration-300"
+        >
+          Login to write a comment
+        </Link>
       )}
+      <div className="flex flex-col items-start justify-start gap-4 w-full">
+        <div className="w-full flex flex-col gap-2 items-start justify-start">
+          <div className="">
+            {item?.user?.image && (
+              <Image
+                src={item.user.image}
+                alt=""
+                width={50}
+                height={50}
+                className={styles.image}
+              />
+            )}
+            <div className={styles.userInfo}>
+              <span className={styles.username}>{item.user.name}</span>
+              <span className={styles.date}>{item.createdAt}</span>
+            </div>
+          </div>
+          <p className={styles.desc}>{item.desc}</p>
+        </div>
+      </div>
     </div>
   );
 };
