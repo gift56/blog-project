@@ -1,9 +1,14 @@
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 const MenuCategories = () => {
-  return (
-    <div>MenuCategories</div>
-  )
-}
+  const catLinks = [
+    {
+      href: "/blog?cat=style",
+      text: "Style",
+    },
+  ];
+  return <div>MenuCategories</div>;
+};
 
-export default MenuCategories
+export default MenuCategories;
