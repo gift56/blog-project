@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import ReactQuill from "react-quill";
-import "react-quill/dist/quill.bubble.css";
 import { GoImage, GoPlus, GoUpload, GoVideo } from "react-icons/go";
+import "react-quill/dist/quill.bubble.css";
 
 const WritePage = () => {
   const [open, setOpen] = useState(false);
@@ -49,7 +49,7 @@ const WritePage = () => {
           ))}
         </select>
       </div>
-      <div className="relative flex items-start gap-6 h-[700px] w-full">
+      <div className="relative flex flex-col items-start gap-6 h-[700px] w-full">
         <button
           type="button"
           className="w-10 h-10 rounded-full flex items-center justify-center border border-darkBg bg-transparent"
@@ -79,6 +79,13 @@ const WritePage = () => {
             </button>
           </div>
         )}
+        <ReactQuill
+          className="w-full flex-grow"
+          theme="bubble"
+          value={value}
+          onChange={setValue}
+          placeholder="Tell your story..."
+        />
       </div>
       <button
         type="submit"
