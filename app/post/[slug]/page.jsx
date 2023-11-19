@@ -53,7 +53,13 @@ const PostDetailPage = () => {
       </div>
       <div className="w-full flex flex-col lg:flex-row items-start justify-start gap-6">
         <div className="w-full lg:flex-[2] flex flex-col items-start justify-start gap-6">
-          
+          <p className="text-base font-normal text-gray md:text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+            excepturi dolores aliquam unde, quae accusamus doloribus molestiae
+            voluptatum non saepe reiciendis sunt dignissimos alias tenetur,
+            ipsum possimus, quis quo illo eligendi blanditiis ad dicta.
+            Quibusdam quae architecto facere velit dignissimos.
+          </p>
         </div>
         <Menu />
       </div>
