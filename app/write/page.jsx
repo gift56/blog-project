@@ -48,7 +48,7 @@ const WritePage = () => {
           ))}
         </select>
       </div>
-      <div className="relative flex items-center gap-6 h-[700px]">
+      <div className="relative flex items-start gap-6 h-[700px] w-full">
         <button type="button" className="w-10 h-10 rounded-full flex items-center justify-center border border-darkBg bg-transparent" onClick={() => setOpen(!open)}>
           <Image src="/plus.png" alt="" width={16} height={16} />
           djd
