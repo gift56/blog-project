@@ -2,33 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const MenuPost = ({ withImage }) => {
-  const catLinks = [
-    {
-      href: "/blog?cat=style",
-      text: "Style",
-    },
-    {
-      href: "/blog",
-      text: "Fashion",
-    },
-    {
-      href: "/blog",
-      text: "Food",
-    },
-    {
-      href: "/blog",
-      text: "Travel",
-    },
-    {
-      href: "/blog",
-      text: "Culture",
-    },
-    {
-      href: "/blog",
-      text: "Coding",
-    },
-  ];
-
   const menuData = [
     {
       cat: "Travel",
@@ -88,13 +61,19 @@ const MenuPost = ({ withImage }) => {
             </div>
           )}
           <div className="flex flex-col items-start justify-start gap-2">
-            <span className={``}>{item.cat}</span>
+            <span
+              className={`flex items-center gap-3 capitalize w-fit px-2 justify-center rounded-lg h-7 text-base font-medium md:text-lg ${colorRender(
+                item.cat
+              )}`}
+            >
+              {item.cat}
+            </span>
             <h3 className="text-base font-medium text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              {item.title}
             </h3>
             <p className="text-dark text-sm font-medium">
-              <span>John Doe</span>
-              <span className="text-primary"> - 10.03.2023</span>
+              <span>{item.author}</span>
+              <span className="text-primary"> - {item.date}</span>
             </p>
           </div>
         </Link>
