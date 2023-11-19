@@ -40,7 +40,15 @@ const PostDetailPage = () => {
             </div>
           </div>
         </div>
-        <div className="w-full lg:flex-1"></div>
+        <div className="w-full lg:flex-1">
+          <Image
+            src="/p1.jpeg"
+            alt="island"
+            width={500}
+            height={500}
+            className="!w-full md:!h-[300px] rounded-lg object-cover"
+          />
+        </div>
       </div>
     </main>
   );

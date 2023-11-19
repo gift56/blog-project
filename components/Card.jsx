@@ -10,7 +10,7 @@ const Card = () => {
           alt="island"
           width={500}
           height={500}
-          className="!w-full md:!h-[300px] rounded-lg"
+          className="!w-full md:!h-[300px] rounded-lg object-cover"
         />
       </div>
       <div className="w-full lg:flex-1 flex flex-col items-start justify-start gap-6">
