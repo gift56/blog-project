@@ -10,7 +10,7 @@ const Comments = () => {
   const [desc, setDesc] = useState("");
 
   return (
-    <div className="w-full flex flex-col items-start justify-start gap-5">
+    <div className="w-full flex flex-col items-start justify-start gap-8">
       <h3 className="text-2xl font-bold text-dark md:text-3xl">Comments</h3>
       {status === "authenticated" ? (
         <div className="w-full flex items-end justify-between gap-5">
@@ -37,22 +37,30 @@ const Comments = () => {
       )}
       <div className="flex flex-col items-start justify-start gap-4 w-full">
         <div className="w-full flex flex-col gap-2 items-start justify-start">
-          <div className="">
-            {item?.user?.image && (
+          <div className="w-full flex items-start justify-start gap-3">
+            <div className="w-12 h-12 md:w-14 md:h-14">
               <Image
-                src={item.user.image}
-                alt=""
-                width={50}
-                height={50}
-                className={styles.image}
+                src="/p1.jpeg"
+                alt="author Profile Image"
+                width={70}
+                height={70}
+                className="object-cover !w-full !h-full rounded-full"
               />
-            )}
-            <div className={styles.userInfo}>
-              <span className={styles.username}>{item.user.name}</span>
-              <span className={styles.date}>{item.createdAt}</span>
+            </div>
+            <div className="flex flex-col items-start justify-start gap-1">
+              <span className="text-lg font-medium md:text-xl text-dark">
+                John Doe
+              </span>
+              <span className="text-sm font-normal text-dark">
+                25 April 2023
+              </span>
             </div>
           </div>
-          <p className={styles.desc}>{item.desc}</p>
+          <p className="">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            ea quidem magnam voluptatibus! Debitis voluptatibus est eos ratione
+            inventore eligendi.
+          </p>
         </div>
       </div>
     </div>
