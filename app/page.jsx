@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       <Featured />
       <CategoryList />
-      <section className="flex flex-col lg:flex-row items-start justify-between gap-6 py-8">
+      <section className="flex flex-col lg:flex-row items-start justify-between gap-10 py-8">
         <CardList />
         <Menu />
       </section>

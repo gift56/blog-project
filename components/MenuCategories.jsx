@@ -45,8 +45,18 @@ const MenuCategories = () => {
     }
   };
   return (
-    <div className="w-full flex flex-wrap justify-between gap-4 md:gap-4">
-      MenuCategories
+    <div className="w-full flex flex-wrap justify-start gap-4">
+      {catLinks.map((item) => (
+        <Link
+          href={item.href}
+          key={item.text}
+          className={`flex items-center gap-3 capitalize w-fit px-4 justify-center rounded-lg h-12 text-base font-medium md:text-lg ${colorRender(
+            item.text
+          )}`}
+        >
+          {item.text}
+        </Link>
+      ))}
     </div>
   );
 };
