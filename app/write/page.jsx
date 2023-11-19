@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
-import { GoPlus } from "react-icons/go";
+import { GoImage, GoPlus, GoUpload, GoVideo } from "react-icons/go";
 
 const WritePage = () => {
   const [open, setOpen] = useState(false);
@@ -58,23 +58,23 @@ const WritePage = () => {
           <GoPlus size={20} />
         </button>
         {open && (
-          <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] bg-white pl-4 transition-all duration-300">
+          <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] pl-4 transition-all duration-300">
             <input
               type="file"
               id="image"
               onChange={(e) => setFile(e.target.files[0])}
               style={{ display: "none" }}
             />
-            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent">
+            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
               <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} />
+                <GoImage size={20} />
               </label>
             </button>
-            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent">
-              <Image src="/external.png" alt="" width={16} height={16} />
+            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
+              <GoUpload size={20} />
             </button>
-            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent">
-              <Image src="/video.png" alt="" width={16} height={16} />
+            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
+              <GoVideo size={20} />
             </button>
           </div>
         )}
