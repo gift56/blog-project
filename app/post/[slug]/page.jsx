@@ -10,10 +10,10 @@ const PostDetailPage = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </h1>
           <div className="w-full flex flex-col md:flex-row items-start justify-start gap-3">
-            <div className="w-12 h-12 md:w-20 md:h-20">
+            <div className="w-12 h-12 md:w-14 md:h-14">
               <Image
                 src="/p1.jpeg"
-                alt="authour Profile Image"
+                alt="author Profile Image"
                 width={70}
                 height={70}
                 className="object-cover !w-full !h-full rounded-full"
@@ -31,8 +31,12 @@ const PostDetailPage = () => {
               </div>
             )} */}
             <div className="flex flex-col items-start justify-start gap-1">
-              <span className="text-lg font-medium md:text-xl text-dark">John Doe</span>
-              <span className="text-sm font-medium md:text-base text-dark">01.01.2024</span>
+              <span className="text-lg font-medium md:text-xl text-dark">
+                John Doe
+              </span>
+              <span className="text-sm font-normal text-dark">
+                25 April 2023
+              </span>
             </div>
           </div>
         </div>
