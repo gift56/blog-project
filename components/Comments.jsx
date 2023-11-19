@@ -6,7 +6,7 @@ import Image from "next/image";
 // import { useSession } from "next-auth/react";
 
 const Comments = () => {
-  const status = "authenticated";
+  const status = "authenticateds";
   const [desc, setDesc] = useState("");
 
   return (
@@ -28,7 +28,7 @@ const Comments = () => {
           </button>
         </div>
       ) : (
-        <Link href="/login">Login to write a comment</Link>
+        <Link href="/login" className="w-fit px-5 h-12 flex items-center justify-center border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed transition-all duration-300">Login to write a comment</Link>
       )}
     </div>
   );
