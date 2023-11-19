@@ -9,6 +9,17 @@ const Footer = () => {
     "/tiktok.png",
     "/youtube.png",
   ];
+  const footerLinks = [
+    {
+      title: "Links",
+      links: [
+        { href: "/", text: "Homepage" },
+        { href: "/", text: "Blog" },
+        { href: "/", text: "About" },
+        { href: "/", text: "Contact" },
+      ],
+    },
+  ];
   return (
     <footer className="w-full py-10 flex flex-col md:flex-row items-start justify-start gap-8 md:justify-between">
       <div className="flex flex-col items-start justify-start gap-4">
@@ -38,7 +49,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div></div>
+      <div className=""></div>
     </footer>
   );
 };
