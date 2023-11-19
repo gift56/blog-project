@@ -44,7 +44,11 @@ const MenuCategories = () => {
       return "bg-[#5e4fff31]";
     }
   };
-  return <div>MenuCategories</div>;
+  return (
+    <div className="w-full flex flex-wrap justify-between gap-4 md:gap-4">
+      MenuCategories
+    </div>
+  );
 };
 
 export default MenuCategories;
