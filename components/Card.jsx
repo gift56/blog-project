@@ -25,7 +25,7 @@ const Card = () => {
           sit amet consectetur adipisicing elit. Natus voluptatum nihil ducimus
           illum officia quisquam aut nam voluptate deleniti veritatis.
         </p>
-        <Link href={`/posts/""`} className="">
+        <Link href={`/posts/""`} className="pb-2 border-b-2 border-primary">
           Read More
         </Link>
       </div>
