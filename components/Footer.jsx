@@ -67,7 +67,9 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className=""></div>
+      <div className="flex flex-col md:flex-wrap gap-6 lg:flex-nowrap lg:flex-row items-start justify-start lg:justify-end">
+        
+      </div>
     </footer>
   );
 };
