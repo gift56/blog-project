@@ -10,7 +10,7 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
         type="button"
         disabled={!hasPrev}
         onClick={() => router.push(`?page=${page - 1}`)}
-        className="w-[100px] h-12 border border-primary bg-primary text-white disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed"
+        className="w-[100px] h-12 border border-primary bg-primary text-white disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed transition-all duration-300"
       >
         Previous
       </button>
@@ -18,7 +18,7 @@ const Pagination = ({ page, hasPrev, hasNext }) => {
         type="button"
         disabled={!hasNext}
         onClick={() => router.push(`?page=${page + 1}`)}
-        className="w-[100px] h-12 border border-primary bg-primary text-white disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed"
+        className="w-[100px] h-12 border border-primary bg-primary text-white disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed transition-all duration-300"
       >
         Next
       </button>
