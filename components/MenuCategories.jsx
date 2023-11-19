@@ -7,6 +7,26 @@ const MenuCategories = () => {
       href: "/blog?cat=style",
       text: "Style",
     },
+    {
+      href: "/blog",
+      text: "Fashion",
+    },
+    {
+      href: "/blog",
+      text: "Food",
+    },
+    {
+      href: "/blog",
+      text: "Travel",
+    },
+    {
+      href: "/blog",
+      text: "Culture",
+    },
+    {
+      href: "/blog",
+      text: "Coding",
+    },
   ];
   return <div>MenuCategories</div>;
 };
