@@ -1,4 +1,5 @@
 import React from "react";
+import { MenuCategories, MenuPost } from ".";
 
 const Menu = () => {
   return (
@@ -9,6 +10,25 @@ const Menu = () => {
           Most Popular
         </h2>
       </div>
+      <MenuPost />
+      <div>
+        <h4 className="text-sm font-medium md:text-base text-dark">
+          Discover by topic
+        </h4>
+        <h2 className="text-xl font-semibold md:text-2xl text-darkBg">
+          Categories
+        </h2>
+      </div>
+      <MenuCategories />
+      <div>
+        <h4 className="text-sm font-medium md:text-base text-dark">
+          Chosen by the author
+        </h4>
+        <h2 className="text-xl font-semibold md:text-2xl text-darkBg">
+          Editors Pick
+        </h2>
+      </div>
+      <MenuPost withImage={true} />
     </div>
   );
 };
