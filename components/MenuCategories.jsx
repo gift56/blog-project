@@ -28,6 +28,22 @@ const MenuCategories = () => {
       text: "Coding",
     },
   ];
+
+  const colorRender = (color) => {
+    if (color === "Style") {
+      return "bg-[#57c4ff31]";
+    } else if (color === "Fashion") {
+      return "bg-[#da85c731]";
+    } else if (color === "Food") {
+      return "bg-[#7fb88133]";
+    } else if (color === "Travel") {
+      return "bg-[#ff795736]";
+    } else if (color === "Culture") {
+      return "bg-[#ffb04f45]";
+    } else if (color === "Coding") {
+      return "bg-[#5e4fff31]";
+    }
+  };
   return <div>MenuCategories</div>;
 };
 
