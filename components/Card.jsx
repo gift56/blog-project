@@ -21,7 +21,13 @@ const Card = () => {
         <h3 className="text-2xl font-semibold md:text-4xl text-darkBg">
           Lorem ipsum dolor sit amet.
         </h3>
-        <p></p>
+        <p className="text-sm md:text-base font-normal text-dark">
+          sit amet consectetur adipisicing elit. Natus voluptatum nihil ducimus
+          illum officia quisquam aut nam voluptate deleniti veritatis.
+        </p>
+        <Link href={`/posts/""`} className="">
+          Read More
+        </Link>
       </div>
     </div>
   );
