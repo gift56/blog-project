@@ -1,9 +1,5 @@
-import React from 'react'
+const MenuPost = ({ withImage }) => {
+  return <div>MenuPost</div>;
+};
 
-const MenuPost = () => {
-  return (
-    <div>MenuPost</div>
-  )
-}
-
-export default MenuPost
+export default MenuPost;
