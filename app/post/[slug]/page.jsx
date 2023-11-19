@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const PostDetailPage = () => {
   return (
@@ -13,6 +14,8 @@ const PostDetailPage = () => {
               <Image
                 src="/p1.jpeg"
                 alt="authour Profile Image"
+                width={70}
+                height={70}
                 className="object-cover !w-full !h-full rounded-full"
               />
             </div>
@@ -28,8 +31,8 @@ const PostDetailPage = () => {
               </div>
             )} */}
             <div className="flex flex-col items-start justify-start gap-1">
-              <span className="">John Doe</span>
-              <span className="">01.01.2024</span>
+              <span className="text-lg font-medium md:text-xl text-dark">John Doe</span>
+              <span className="text-sm font-medium md:text-base text-dark">01.01.2024</span>
             </div>
           </div>
         </div>
