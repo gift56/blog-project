@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Menu } from "@/components";
+import { Comments, Menu } from "@/components";
 
 const PostDetailPage = () => {
   return (
@@ -60,6 +60,7 @@ const PostDetailPage = () => {
             ipsum possimus, quis quo illo eligendi blanditiis ad dicta.
             Quibusdam quae architecto facere velit dignissimos.
           </p>
+          <Comments />
         </div>
         <Menu />
       </div>
