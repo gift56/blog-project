@@ -40,7 +40,7 @@ const Footer = () => {
   ];
   return (
     <footer className="w-full py-10 flex flex-col md:flex-row items-start justify-start gap-8 md:justify-between">
-      <div className="flex flex-col items-start justify-start gap-4">
+      <div className="w-full md:flex-1 flex flex-col items-start justify-start gap-4">
         <div className="flex items-center justify-center">
           <Link
             href="/"
@@ -67,8 +67,22 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col md:flex-wrap gap-6 lg:flex-nowrap lg:flex-row items-start justify-start lg:justify-end">
-        
+      <div className="flex flex-col md:flex-wrap gap-6 lg:flex-nowrap lg:flex-row items-start justify-start lg:justify-end w-full md:flex-1">
+        {footerLinks.map((item) => (
+          <div
+            key={item.title}
+            className="flex flex-col items-start justify-start gap-5"
+          >
+            <h3 className="text-lg font-bold md:text-xl">{item.title}</h3>
+            <nav className="flex flex-col items-start justify-start gap-3">
+              {item.links.map((item, index) => (
+                <Link href={item.href} key={index}>
+                  {item.text}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        ))}
       </div>
     </footer>
   );
