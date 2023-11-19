@@ -49,7 +49,7 @@ const AuthLink = () => {
       {status === "notauthenticated" ? (
         <Link
           href="/login"
-          className="hidden md:flex hover:border-b-2 h-full border-black transition-all text-lg font-normal"
+          className="hidden md:flex text-lg font-normal relative"
         >
           Login
         </Link>
@@ -57,12 +57,12 @@ const AuthLink = () => {
         <>
           <Link
             href="/write"
-            className="hidden md:flex hover:border-b-2 h-full border-black transition-all text-lg font-normal"
+            className="hidden md:flex text-lg font-normal relative "
           >
             Write
           </Link>
           <span
-            className="hidden md:flex hover:border-b-2 h-full border-black transition-all text-lg font-normal"
+            className="hidden md:flex text-lg font-normal relative "
             // onClick={signOut}
           >
             Logout

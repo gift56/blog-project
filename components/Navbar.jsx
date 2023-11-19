@@ -50,7 +50,7 @@ const Navbar = () => {
           <Link
             key={item.text}
             href={item.to}
-            className="hidden md:flex hover:border-b-2 h-full border-black transition-all text-lg font-normal"
+            className="hidden md:flex h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-0 before:left-[50%] before:translate-x-[-50%] before:w-[25%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300"
           >
             {item.text}
           </Link>
