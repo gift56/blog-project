@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const CardList = () => {
-  return (
-    <section>CardList</section>
-  )
-}
+  return <div className="w-full lg:flex-[2]">CardList</div>;
+};
 
-export default CardList
+export default CardList;
