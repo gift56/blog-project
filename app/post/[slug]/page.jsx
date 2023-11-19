@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Menu } from "@/components";
 
 const PostDetailPage = () => {
   return (
@@ -51,8 +52,10 @@ const PostDetailPage = () => {
         </div>
       </div>
       <div className="w-full flex flex-col lg:flex-row items-start justify-start gap-6">
-        <div className=""></div>
-        <div></div>
+        <div className="w-full lg:flex-[2] flex flex-col items-start justify-start gap-6">
+          
+        </div>
+        <Menu />
       </div>
     </main>
   );
