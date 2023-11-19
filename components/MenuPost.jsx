@@ -56,6 +56,7 @@ const MenuPost = ({ withImage }) => {
                 alt="user"
                 width={100}
                 height={100}
+                className="rounded-full !w-full !h-full"
               />
             </div>
           )}

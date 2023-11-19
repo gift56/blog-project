@@ -67,7 +67,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col md:flex-wrap gap-6 lg:flex-nowrap lg:flex-row items-start justify-start lg:justify-end w-full md:flex-1">
+      <div className="flex flex-col md:flex-wrap gap-8 md:gap-10 lg:flex-nowrap lg:flex-row items-start justify-start lg:justify-end w-full md:flex-1">
         {footerLinks.map((item) => (
           <div
             key={item.title}
@@ -76,7 +76,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold md:text-xl">{item.title}</h3>
             <nav className="flex flex-col items-start justify-start gap-3">
               {item.links.map((item, index) => (
-                <Link href={item.href} key={index}>
+                <Link href={item.href} key={index} className="text-base font-medium">
                   {item.text}
                 </Link>
               ))}
