@@ -2,8 +2,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-// import ReactQuill from "react-quill";
-// import "react-quill/dist/quill.bubble.css";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.bubble.css";
+import { GoPlus } from "react-icons/go";
 
 const WritePage = () => {
   const [open, setOpen] = useState(false);
@@ -49,9 +50,12 @@ const WritePage = () => {
         </select>
       </div>
       <div className="relative flex items-start gap-6 h-[700px] w-full">
-        <button type="button" className="w-10 h-10 rounded-full flex items-center justify-center border border-darkBg bg-transparent" onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
-          djd
+        <button
+          type="button"
+          className="w-10 h-10 rounded-full flex items-center justify-center border border-darkBg bg-transparent"
+          onClick={() => setOpen(!open)}
+        >
+          <GoPlus size={20} />
         </button>
         {open && (
           <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] bg-white pl-4 transition-all duration-300">
