@@ -1,7 +1,7 @@
 import React from "react";
 
-const PostPage = () => {
+const PostDetailPage = () => {
   return <main>PostPage</main>;
 };
 
-export default PostPage;
+export default PostDetailPage;
