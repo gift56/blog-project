@@ -19,6 +19,15 @@ const Footer = () => {
         { href: "/", text: "Contact" },
       ],
     },
+    {
+      title: "Tags",
+      links: [
+        { href: "/", text: "Style" },
+        { href: "/", text: "Fashion" },
+        { href: "/", text: "Coding" },
+        { href: "/", text: "Travel" },
+      ],
+    },
   ];
   return (
     <footer className="w-full py-10 flex flex-col md:flex-row items-start justify-start gap-8 md:justify-between">
