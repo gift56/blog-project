@@ -33,7 +33,9 @@ const WritePage = () => {
         onChange={(e) => setTitle(e.target.value)}
       />
       <div className="w-full flex flex-col items-start justify-start gap-2">
-        <label htmlFor="cat" className="text-lg font-medium text-dark">Select Catergory</label>
+        <label htmlFor="cat" className="text-lg font-medium text-dark">
+          Select Catergory
+        </label>
         <select
           onChange={(e) => setCatSlug(e.target.value)}
           className="py-3 rounded-lg w-full cursor-pointer outline-none bg-transparent border-b border-dark focus:border-primary transition-all duration-300 text-lg pl-4"
@@ -46,6 +48,7 @@ const WritePage = () => {
           ))}
         </select>
       </div>
+      <button type="submit" className="absolute top-0 right-0 bg-primary text-white py-2 px-6 border-primary border rounded-2xl">Publish</button>
     </main>
   );
 };
