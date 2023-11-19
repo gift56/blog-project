@@ -49,9 +49,31 @@ const WritePage = () => {
         </select>
       </div>
       <div className="relative flex items-center gap-6 h-[700px]">
-        <button type="button" className="" onClick={() => setOpen(!open)}>
+        <button type="button" className="w-10 h-10 rounded-full flex items-center justify-center border border-darkBg bg-transparent" onClick={() => setOpen(!open)}>
           <Image src="/plus.png" alt="" width={16} height={16} />
+          djd
         </button>
+        {open && (
+          <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] bg-white">
+            <input
+              type="file"
+              id="image"
+              onChange={(e) => setFile(e.target.files[0])}
+              style={{ display: "none" }}
+            />
+            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent">
+              <label htmlFor="image">
+                <Image src="/image.png" alt="" width={16} height={16} />
+              </label>
+            </button>
+            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent">
+              <Image src="/external.png" alt="" width={16} height={16} />
+            </button>
+            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent">
+              <Image src="/video.png" alt="" width={16} height={16} />
+            </button>
+          </div>
+        )}
       </div>
       <button
         type="submit"
