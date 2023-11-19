@@ -56,7 +56,7 @@ const Comments = () => {
               </span>
             </div>
           </div>
-          <p className="">
+          <p className="text-base font-medium text-dark">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
             ea quidem magnam voluptatibus! Debitis voluptatibus est eos ratione
             inventore eligendi.
