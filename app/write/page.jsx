@@ -64,6 +64,7 @@ const WritePage = () => {
               id="image"
               onChange={(e) => setFile(e.target.files[0])}
               style={{ display: "none" }}
+              accept="image/*"
             />
             <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
               <label htmlFor="image">
