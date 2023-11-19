@@ -6,7 +6,7 @@ import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 
 const AuthLink = () => {
-  const status = "notauthenticated";
+  const status = "notauthenticateds";
   const [mobileNav, setMobileNav] = useState(false);
   const modalRef = useRef(null);
 
@@ -62,7 +62,7 @@ const AuthLink = () => {
             Write
           </Link>
           <span
-            className="hidden md:flex h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300"
+            className="hidden md:flex h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300 cursor-pointer"
             // onClick={signOut}
           >
             Logout
