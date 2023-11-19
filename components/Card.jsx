@@ -15,7 +15,7 @@ const Card = () => {
       </div>
       <div className="w-full lg:flex-1 flex flex-col items-start justify-start gap-6">
         <p className="text-sm uppercase text-gray-500 md:text-base font-medium">
-          <span>11.2.2023</span> - <span className="text-primary">Culture</span>
+          <span>11.2.2023</span> - <span className="text-primary font-semibold">Culture</span>
         </p>
       </div>
     </div>
