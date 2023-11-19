@@ -54,7 +54,7 @@ const WritePage = () => {
           djd
         </button>
         {open && (
-          <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] bg-white">
+          <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] bg-white pl-4 transition-all duration-300">
             <input
               type="file"
               id="image"
