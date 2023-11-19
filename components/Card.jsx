@@ -25,7 +25,10 @@ const Card = () => {
           sit amet consectetur adipisicing elit. Natus voluptatum nihil ducimus
           illum officia quisquam aut nam voluptate deleniti veritatis.
         </p>
-        <Link href={`/posts/""`} className="pb-2 border-b-2 border-primary">
+        <Link
+          href={`/posts/""`}
+          className="pb-2 w-max relative before:content-[''] before:absolute before:bottom-0 before:left-[50%] before:translate-x-[-50%] before:w-[25%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300"
+        >
           Read More
         </Link>
       </div>
