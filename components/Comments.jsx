@@ -21,7 +21,7 @@ const Comments = () => {
           />
           <button
             type="submit"
-            className="w-[100px] h-12 border border-primary bg-primary text-white disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed transition-all duration-300"
+            className="w-[100px] h-12 border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed transition-all duration-300"
             onClick={() => {}}
           >
             Send
