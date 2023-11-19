@@ -28,6 +28,15 @@ const Footer = () => {
         { href: "/", text: "Travel" },
       ],
     },
+    {
+      title: "Social",
+      links: [
+        { href: "/", text: "Facebook" },
+        { href: "/", text: "Instagram" },
+        { href: "/", text: "Tiktok" },
+        { href: "/", text: "Youtube" },
+      ],
+    },
   ];
   return (
     <footer className="w-full py-10 flex flex-col md:flex-row items-start justify-start gap-8 md:justify-between">
