@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { baseUrl } from "@/utils/config";
 
 const getData = async () => {
-  const res = await fetch("/api/categories", {
+  const res = await fetch(`${baseUrl}/api/categories`, {
     cache: "no-store",
   });
 
