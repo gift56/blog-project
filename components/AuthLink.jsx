@@ -4,12 +4,16 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { FiChevronDown } from "react-icons/fi";
 import { signOut, useSession } from "next-auth/react";
 
 const AuthLink = () => {
-  const { status } = useSession();
+  const { status, data } = useSession();
   const [mobileNav, setMobileNav] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
   const modalRef = useRef(null);
+
+  console.log(data);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -62,12 +66,15 @@ const AuthLink = () => {
           >
             Write
           </Link>
-          <span
-            className="hidden md:flex h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300 cursor-pointer"
-            onClick={signOut}
-          >
-            Logout
-          </span>
+          <div className="relative">
+            <Image
+              src={data?.user?.image}
+              alt={data?.user?.name}
+              width={24}
+              height={24}
+              className="rounded-full object-contain"
+            />
+          </div>
         </>
       )}
       <span onClick={() => setMobileNav(true)} className="text-dark md:hidden">
@@ -99,7 +106,7 @@ const AuthLink = () => {
                 {item.text}
               </Link>
             ))}
-            {status === "notauthenticated" ? (
+            {status === "unauthenticated" ? (
               <Link href="/login" className="text-lg font-normal">
                 Login
               </Link>
@@ -108,7 +115,10 @@ const AuthLink = () => {
                 <Link href="/write" className="text-lg font-normal">
                   Write
                 </Link>
-                <span className="text-lg font-normal cursor-pointer">
+                <span
+                  onClick={signOut}
+                  className="text-lg font-normal cursor-pointer"
+                >
                   Logout
                 </span>
               </>
