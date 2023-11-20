@@ -1,5 +1,21 @@
 import React from "react";
 import { Card, Pagination } from ".";
+import { baseUrl } from "@/utils/config";
+
+const getData = async (page, cat) => {
+  const res = await fetch(
+    `${baseUrl}/api/posts?page=${page}&cat=${cat || ""}`,
+    {
+      cache: "no-store",
+    }
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+
+  return res.json();
+};
 
 const CardList = () => {
   return (
