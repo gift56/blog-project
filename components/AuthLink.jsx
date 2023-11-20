@@ -4,9 +4,10 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { useSession } from "next-auth/react";
 
 const AuthLink = () => {
-  const status = "notauthenticated";
+  const { status } = useSession();
   const [mobileNav, setMobileNav] = useState(false);
   const modalRef = useRef(null);
 
