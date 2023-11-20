@@ -157,11 +157,19 @@ const AuthLink = () => {
               </Link>
             ))}
             {status === "unauthenticated" ? (
-              <Link href="/login" className="text-lg font-normal">
+              <Link
+                href="/login"
+                className="text-lg font-normal"
+                onClick={() => setMobileNav(false)}
+              >
                 Login
               </Link>
             ) : (
-              <Link href="/write" className="text-lg font-normal">
+              <Link
+                href="/write"
+                className="text-lg font-normal"
+                onClick={() => setMobileNav(false)}
+              >
                 Write
               </Link>
             )}
@@ -173,6 +181,7 @@ const AuthLink = () => {
                   width={24}
                   height={24}
                   key={index}
+                  onClick={() => setMobileNav(false)}
                 />
               ))}
             </div>
