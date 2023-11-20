@@ -12,8 +12,7 @@ const AuthLink = () => {
   const [mobileNav, setMobileNav] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   const modalRef = useRef(null);
-
-  console.log(data);
+  const dropRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -27,6 +26,19 @@ const AuthLink = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropRef.current && !dropRef.current.contains(event.target)) {
+        setDropDown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropDown]);
 
   const socialIcons = [
     "/facebook.png",
@@ -81,6 +93,7 @@ const AuthLink = () => {
               <FiChevronDown size={20} />
             </div>
             <div
+              ref={dropRef}
               className={`absolute ${
                 dropDown
                   ? "top-10 scale-100 opacity-100"
