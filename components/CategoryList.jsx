@@ -1,6 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const getData = async () => {
+  const res = await fetch("/api/categories", {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+
+  return res.json();
+};
+
 const CategoryList = () => {
   const colorRender = (color) => {
     if (color === "style") {
