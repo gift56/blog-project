@@ -2,6 +2,7 @@ import { useSession } from "next-auth/react";
 
 const LoginPage = () => {
   const { data, status } = useSession();
+  console.log({ "data:": data, status: status });
 
   return (
     <div className="w-full flex items-center justify-center py-14">
