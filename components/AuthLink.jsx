@@ -84,7 +84,11 @@ const AuthLink = () => {
               className="flex items-center justify-start gap-1 cursor-pointer"
             >
               <Image
-                src={data?.user?.image}
+                src={
+                  data?.user?.image
+                    ? data?.user?.image
+                    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNQK-HN5F5JDkKC-DsTjhzTHq8Hj8YZX6Vg&usqp=CAU"
+                }
                 alt={data?.user?.name ? data?.user?.name : "ProfilePhoto"}
                 width={35}
                 height={35}
@@ -102,8 +106,12 @@ const AuthLink = () => {
             >
               <div className="flex items-center justify-start gap-3">
                 <Image
-                  src={data?.user?.image}
-                  alt={data?.user?.name}
+                  src={
+                    data?.user?.image
+                      ? data?.user?.image
+                      : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNQK-HN5F5JDkKC-DsTjhzTHq8Hj8YZX6Vg&usqp=CAU"
+                  }
+                  alt={data?.user?.name ? data?.user?.name : "ProfilePhoto"}
                   width={65}
                   height={65}
                   className="rounded-full object-contain"
