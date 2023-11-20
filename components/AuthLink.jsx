@@ -105,7 +105,7 @@ const AuthLink = () => {
                 </div>
               </div>
               <span
-                className="hidden md:flex items-center justify-start gap-1 h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300 cursor-pointer text-red-500"
+                className="hidden md:flex items-center justify-start gap-4 h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300 cursor-pointer text-red-500"
                 onClick={signOut}
               >
                 <span>Logout</span> <FiLogOut />
