@@ -17,14 +17,19 @@ const getData = async (page, cat) => {
   return res.json();
 };
 
-const CardList = () => {
+const CardList = async ({ page, cat }) => {
+  const { posts, count } = await getData(page, cat);
+
+  const POST_PER_PAGE = 2;
+
+  const hasPrev = POST_PER_PAGE * (page - 1) > 0;
+  const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
+
   return (
     <div className="w-full lg:flex-[2] flex flex-col items-start justify-start gap-6">
       <h2 className="text-2xl font-bold md:text-3xl">Recent Post</h2>
       <div className="w-full flex flex-col items-start justify-start gap-8">
-        <Card />
-        <Card />
-        <Card />
+        {posts && posts.map((item) => <Card item={item} key={item.id} />)}
       </div>
       <Pagination />
     </div>
