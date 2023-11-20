@@ -63,7 +63,7 @@ const AuthLink = () => {
 
   return (
     <>
-      {status && status === "unauthenticated" ? (
+      {!data ? (
         <Link
           href="/login"
           className="hidden md:flex h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300"
