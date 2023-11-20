@@ -5,16 +5,18 @@ import { useRouter } from "next/navigation";
 import ReactQuill from "react-quill";
 import { GoImage, GoPlus, GoUpload, GoVideo } from "react-icons/go";
 import "react-quill/dist/quill.bubble.css";
+import { useSession } from "next-auth/react";
 
 const WritePage = () => {
+  const { status } = useSession();
+  const router = useRouter();
+
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
   const [media, setMedia] = useState("");
   const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
   const [catSlug, setCatSlug] = useState("");
-
-  const router = useRouter();
 
   const optionsValues = [
     "style",
@@ -24,6 +26,14 @@ const WritePage = () => {
     "travel",
     "coding",
   ];
+  
+  if (status === "loading") {
+    return <div className={styles.loading}>Loading...</div>;
+  }
+
+  if (status === "authenticated") {
+    router.push("/");
+  }
 
   return (
     <main className="w-full flex flex-col relative items-start justify-start gap-6 py-14">
