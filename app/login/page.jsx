@@ -9,7 +9,7 @@ const LoginPage = () => {
       <div className="flex flex-col items-center justify-center gap-6 shadow-2xl py-10 px-5 rounded-xl w-full md:w-[500px]">
         <button
           type="button"
-          onClick={() => signIn()}
+          onClick={() => signIn("google")}
           className="w-fit bg-white text-darkBg py-4 px-10 rounded-lg font-medium text-lg md:text-xl"
         >
           Sign in with Google
