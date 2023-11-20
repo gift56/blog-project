@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiLogOut } from "react-icons/fi";
 import { signOut, useSession } from "next-auth/react";
 
 const AuthLink = () => {
@@ -67,13 +67,50 @@ const AuthLink = () => {
             Write
           </Link>
           <div className="relative">
-            <Image
-              src={data?.user?.image}
-              alt={data?.user?.name}
-              width={24}
-              height={24}
-              className="rounded-full object-contain"
-            />
+            <div
+              onClick={() => setDropDown((prev) => !prev)}
+              className="flex items-center justify-start gap-1 cursor-pointer"
+            >
+              <Image
+                src={data?.user?.image}
+                alt={data?.user?.name}
+                width={35}
+                height={35}
+                className="rounded-full object-contain"
+              />
+              <FiChevronDown size={20} />
+            </div>
+            <div
+              className={`absolute ${
+                dropDown
+                  ? "top-10 scale-100 opacity-100"
+                  : "scale-0 top-0 opacity-0"
+              } transition-all duration-300 right-0 w-[300px] p-8 bg-white rounded-lg shadow-lg flex flex-col items-start justify-start gap-3`}
+            >
+              <div className="flex items-center justify-start gap-3">
+                <Image
+                  src={data?.user?.image}
+                  alt={data?.user?.name}
+                  width={65}
+                  height={65}
+                  className="rounded-full object-contain"
+                />
+                <div className="flex flex-col items-start justify-start">
+                  <h4 className="text-xl font-medium text-darkBg">
+                    {data?.user?.name}
+                  </h4>
+                  <p className="text-dark text-sm font-normal">
+                    {data?.user?.email}
+                  </p>
+                </div>
+              </div>
+              <span
+                className="hidden md:flex items-center justify-start gap-1 h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300 cursor-pointer text-red-500"
+                onClick={signOut}
+              >
+                <span>Logout</span> <FiLogOut />
+              </span>
+            </div>
           </div>
         </>
       )}
