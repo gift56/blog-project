@@ -85,7 +85,7 @@ const AuthLink = () => {
             >
               <Image
                 src={data?.user?.image}
-                alt={data?.user?.name}
+                alt={data?.user?.name ? data?.user?.name : "ProfilePhoto"}
                 width={35}
                 height={35}
                 className="rounded-full object-contain"
