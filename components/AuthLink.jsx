@@ -6,7 +6,7 @@ import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 
 const AuthLink = () => {
-  const status = "notauthenticateds";
+  const status = "notauthenticated";
   const [mobileNav, setMobileNav] = useState(false);
   const modalRef = useRef(null);
 
