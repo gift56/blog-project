@@ -26,7 +26,7 @@ const AuthLink = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropRef.current && !dropRef.current.contains(event.target)) {
@@ -98,7 +98,7 @@ const AuthLink = () => {
                 dropDown
                   ? "top-10 scale-100 opacity-100"
                   : "scale-0 top-0 opacity-0"
-              } transition-all duration-300 right-0 w-[300px] p-8 bg-white rounded-lg shadow-lg flex flex-col items-start justify-start gap-3`}
+              } transition-all duration-300 -right-12 md:right-0 w-[300px] p-8 bg-white rounded-lg shadow-lg flex flex-col items-start justify-start gap-3`}
             >
               <div className="flex items-center justify-start gap-3">
                 <Image
@@ -118,7 +118,7 @@ const AuthLink = () => {
                 </div>
               </div>
               <span
-                className="hidden md:flex items-center justify-start gap-4 h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300 cursor-pointer text-red-500"
+                className="flex items-center justify-start gap-4 h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300 cursor-pointer text-red-500"
                 onClick={signOut}
               >
                 <span>Logout</span> <FiLogOut />
@@ -161,17 +161,9 @@ const AuthLink = () => {
                 Login
               </Link>
             ) : (
-              <>
-                <Link href="/write" className="text-lg font-normal">
-                  Write
-                </Link>
-                <span
-                  onClick={signOut}
-                  className="text-lg font-normal cursor-pointer"
-                >
-                  Logout
-                </span>
-              </>
+              <Link href="/write" className="text-lg font-normal">
+                Write
+              </Link>
             )}
             <div className="flex flex-wrap items-center justify-start gap-2">
               {socialIcons.map((item, index) => (
