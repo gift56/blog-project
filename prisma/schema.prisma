@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Account {
-  id                 String  @id @default(cuid())
+  id                 String  @id @default(cuid()) @map("_id")
   userId             String
   type               String
   provider           String
