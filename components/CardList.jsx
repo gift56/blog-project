@@ -32,7 +32,7 @@ const CardList = async ({ page, cat }) => {
     <div className="w-full lg:flex-[2] flex flex-col items-start justify-start gap-6">
       <h2 className="text-2xl font-bold md:text-3xl">Recent Post</h2>
       <div className="w-full flex flex-col items-start justify-start gap-8">
-        {posts && posts.map((item) => <Card item={item} key={item.id} />)}
+        {posts && posts.map((item) => <Card item={item} key={item._id} />)}
       </div>
       <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
     </div>
