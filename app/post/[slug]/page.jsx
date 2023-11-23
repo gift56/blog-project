@@ -14,7 +14,11 @@ const getData = async (slug) => {
   return res.json();
 };
 
-const PostDetailPage = async({ params }) => {
+const PostDetailPage = async ({ params }) => {
+  const { slug } = params;
+
+  const data = await getData(slug);
+
   return (
     <main className="w-full flex flex-col items-start justify-start gap-16 py-10">
       <div className="w-full flex flex-col lg:flex-row items-start justify-start gap-6">
