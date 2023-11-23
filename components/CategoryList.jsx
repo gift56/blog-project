@@ -37,27 +37,28 @@ const CategoryList = async () => {
     <section className="py-9 w-full flex flex-col items-start justify-start gap-6">
       <h3 className="text-3xl font-semibold md:text-4xl">Popular Categories</h3>
       <div className="w-full flex flex-wrap justify-between gap-4 md:gap-4">
-        {data &&
-          data.map((item) => (
-            <Link
-              href={`/blog?cat=${item.slug}`}
-              key={item.id}
-              className={`flex items-center gap-3 capitalize w-[45%] sm:w-[30%] lg:w-[23%] xl:w-[15%] justify-center rounded-lg h-16 ${colorRender(
-                item.slug
-              )}`}
-            >
-              <Image
-                src={item.img}
-                alt={item.title}
-                width={32}
-                height={32}
-                className="object-cover !w-10 !h-10 rounded-full"
-              />
-              <span className="text-base font-medium md:text-lg">
-                {item.title}
-              </span>
-            </Link>
-          ))}
+        {data.length === 0
+          ? null
+          : data.map((item) => (
+              <Link
+                href={`/blog?cat=${item.slug}`}
+                key={item.id}
+                className={`flex items-center gap-3 capitalize w-[45%] sm:w-[30%] lg:w-[23%] xl:w-[15%] justify-center rounded-lg h-16 ${colorRender(
+                  item.slug
+                )}`}
+              >
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  width={32}
+                  height={32}
+                  className="object-cover !w-10 !h-10 rounded-full"
+                />
+                <span className="text-base font-medium md:text-lg">
+                  {item.title}
+                </span>
+              </Link>
+            ))}
       </div>
     </section>
   );
