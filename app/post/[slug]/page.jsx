@@ -2,7 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { Comments, Menu } from "@/components";
 
-const PostDetailPage = () => {
+const getData = async (slug) => {
+  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed");
+  }
+
+  return res.json();
+};
+
+const PostDetailPage = async({ params }) => {
   return (
     <main className="w-full flex flex-col items-start justify-start gap-16 py-10">
       <div className="w-full flex flex-col lg:flex-row items-start justify-start gap-6">
