@@ -160,7 +160,7 @@ const WritePage = () => {
             <span className="text-base font-medium">{progress}%</span>
           </div>
         ) : (
-          <p className="text-sm md:text-lg text-dark">{file.name}</p>
+          <p className="text-sm md:text-lg text-dark">{media && file.name}</p>
         )}
         {open && (
           <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] pl-4 transition-all duration-300">
