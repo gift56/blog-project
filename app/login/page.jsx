@@ -7,7 +7,7 @@ const LoginPage = () => {
   const router = useRouter();
 
   if (status === "loading") {
-    return <div className="text-lg font-medium text-darkBg">Loading...</div>;
+    return <div className="text-lg font-medium">Loading...</div>;
   }
 
   if (status === "authenticated") {
