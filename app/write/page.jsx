@@ -123,7 +123,7 @@ const WritePage = () => {
       <div className="w-full flex flex-col items-start justify-start gap-2">
         <select
           onChange={(e) => setCatSlug(e.target.value)}
-          className="py-3 rounded-lg w-full cursor-pointer outline-none bg-transparent border-b border-dark focus:border-primary transition-all duration-300 text-lg pl-4"
+          className="py-3 rounded-lg w-full cursor-pointer outline-none bg-transparent border-b border-dark focus:border-primary transition-all duration-300 text-lg pl-4 dark:text-dark"
           id="cat"
         >
           <option value="style">Select Catergory</option>
