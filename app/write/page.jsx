@@ -99,9 +99,15 @@ const WritePage = () => {
 
     if (res.status === 200) {
       const data = await res.json();
-      router.push(`/posts/${data.slug}`);
+      router.push(`/post/${data.slug}`);
     }
   };
+
+  const mediaValue = media.length > 0;
+  const valueValue = value.length > 0;
+  const titleValue = title.length > 0;
+
+  const disableBtn = !mediaValue && !valueValue && !titleValue;
 
   return (
     <main className="w-full flex flex-col relative items-start justify-start gap-6 py-14">
@@ -168,9 +174,10 @@ const WritePage = () => {
         />
       </div>
       <button
+        disabled={disableBtn}
         type="submit"
         onClick={handleSubmit}
-        className="absolute top-0 right-0 bg-primary text-white py-2 px-6 border-primary border rounded-2xl"
+        className="absolute top-0 right-0 bg-primary text-white py-2 px-6 border-primary border rounded-2xl disabled:bg-primary/50 disabled:cursor-not-allowed"
       >
         Publish
       </button>
