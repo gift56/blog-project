@@ -23,11 +23,11 @@ const Card = ({ key, item }) => {
           <span>{item.createdAt.substring(0, 10)}</span> -{" "}
           <span className="text-primary font-semibold">{item.catSlug}</span>
         </p>
-        <h3 className="text-2xl font-semibold md:text-4xl text-darkBg">
+        <h3 className="text-2xl font-semibold md:text-4xl">
           {item.title}
         </h3>
         <div
-          className="text-sm md:text-base font-normal text-dark"
+          className="text-sm md:text-base font-normal text-dark dark:text-[#C0C5D0]"
           dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 60) }}
         />
         <Link
