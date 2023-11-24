@@ -112,14 +112,12 @@ const WritePage = () => {
         onChange={(e) => setTitle(e.target.value)}
       />
       <div className="w-full flex flex-col items-start justify-start gap-2">
-        <label htmlFor="cat" className="text-lg font-medium text-dark">
-          Select Catergory
-        </label>
         <select
           onChange={(e) => setCatSlug(e.target.value)}
           className="py-3 rounded-lg w-full cursor-pointer outline-none bg-transparent border-b border-dark focus:border-primary transition-all duration-300 text-lg pl-4"
           id="cat"
         >
+          <option value="style">Select Catergory</option>
           {optionsValues.map((item) => (
             <option value={item} key={item}>
               {item}
