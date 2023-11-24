@@ -75,8 +75,8 @@ const Comments = ({ postSlug }) => {
                   {item?.user?.image && (
                     <div className="w-12 h-12 md:w-14 md:h-14">
                       <Image
-                        src="/p1.jpeg"
-                        alt="author Profile Image"
+                        src={item.user.image}
+                        alt={item.user.name}
                         width={70}
                         height={70}
                         className="object-cover !w-full !h-full rounded-full"
@@ -88,7 +88,7 @@ const Comments = ({ postSlug }) => {
                       {item.user.name}
                     </span>
                     <span className="text-sm font-normal text-dark">
-                      {item.createdAt}
+                      {item.createdAt.substring(0, 10)}
                     </span>
                   </div>
                 </div>
