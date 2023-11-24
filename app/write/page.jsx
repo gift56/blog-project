@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import ReactQuill from "react-quill";
 import { GoImage, GoPlus, GoUpload, GoVideo } from "react-icons/go";
 import "react-quill/dist/quill.bubble.css";
 import { useSession } from "next-auth/react";
@@ -13,10 +12,13 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utils/firebase";
+import dynamic from "next/dynamic";
 
 const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
+
+  const ReactQuill = dynamic(() => import("react-quill"));
 
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
