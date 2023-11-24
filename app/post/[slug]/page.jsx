@@ -44,7 +44,7 @@ const PostDetailPage = async ({ params }) => {
                 {data?.user.name}
               </span>
               <span className="text-sm font-normal text-dark">
-                25 April 2023
+                {data?.createdAt.substring(0, 10)}
               </span>
             </div>
           </div>
@@ -67,7 +67,7 @@ const PostDetailPage = async ({ params }) => {
             className="text-base font-normal text-gray md:text-lg"
             dangerouslySetInnerHTML={{ __html: data?.desc }}
           />
-          <Comments postSlug={slug}/>
+          <Comments postSlug={slug} />
         </div>
         <Menu />
       </div>
