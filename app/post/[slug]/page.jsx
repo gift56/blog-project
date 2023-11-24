@@ -40,10 +40,10 @@ const PostDetailPage = async ({ params }) => {
               </div>
             )}
             <div className="flex flex-col items-start justify-start gap-1">
-              <span className="text-lg font-medium md:text-xl text-dark">
+              <span className="text-lg font-medium md:text-xl text-dark dark:text-[#C0C5D0]">
                 {data?.user.name}
               </span>
-              <span className="text-sm font-normal text-dark">
+              <span className="text-sm font-normal text-dark dark:text-[#C0C5D0]">
                 {data?.createdAt.substring(0, 10)}
               </span>
             </div>

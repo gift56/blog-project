@@ -1,5 +1,6 @@
-import Link from "next/link";
 import React from "react";
+import { baseUrl } from "@/utils/config";
+import Link from "next/link";
 
 const getData = async () => {
   const res = await fetch(`${baseUrl}/api/categories`, {

@@ -39,7 +39,7 @@ const Comments = ({ postSlug }) => {
 
   return (
     <div className="w-full flex flex-col items-start justify-start gap-8">
-      <h3 className="text-2xl font-bold text-dark md:text-3xl">Comments</h3>
+      <h3 className="text-2xl font-bold text-dark dark:text-[#C0C5D0] md:text-3xl">Comments</h3>
       {status === "authenticated" ? (
         <div className="w-full flex items-end justify-between gap-5">
           <textarea
