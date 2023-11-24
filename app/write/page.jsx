@@ -155,7 +155,7 @@ const WritePage = () => {
             <img
               src="/loader.svg"
               alt="loader"
-              className="w-full h-full object-cover"
+              className="w-12 h-12 object-cover"
             />
             <span className="text-base font-medium">{progress}%</span>
           </div>
