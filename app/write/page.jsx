@@ -149,12 +149,16 @@ const WritePage = () => {
                 <GoImage size={20} />
               </label>
             </button>
-            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
-              <GoUpload size={20} />
-            </button>
-            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
-              <GoVideo size={20} />
-            </button>
+            <label htmlFor="image">
+              <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
+                <GoUpload size={20} />
+              </button>
+            </label>
+            <label htmlFor="image">
+              <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
+                <GoVideo size={20} />
+              </button>
+            </label>
           </div>
         )}
         <ReactQuill
