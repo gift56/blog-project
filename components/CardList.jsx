@@ -41,6 +41,7 @@ const CardList = ({ page, cat }) => {
         }
 
         const newData = await res.json();
+
         if (newData.posts) {
           newData.posts.reverse();
         }
@@ -66,11 +67,21 @@ const CardList = ({ page, cat }) => {
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
 
+  console.log(posts);
+
   return (
     <div className="w-full lg:flex-[2] flex flex-col items-start justify-start gap-6">
       <h2 className="text-2xl font-bold md:text-3xl">Recent Post</h2>
       <div className="w-full flex flex-col items-start justify-start gap-8">
-        {posts && posts.map((item) => <Card item={item} key={item._id} />)}
+        {!data ? (
+          <div className="flex flex-col items-center justify-center gap-6">
+            <h4 className="text-2xl text-center md:text-4xl font-medium">
+              No data on this!
+            </h4>
+          </div>
+        ) : (
+          posts.map((item) => <Card item={item} key={item._id} />)
+        )}
       </div>
       <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
     </div>
