@@ -40,12 +40,6 @@ const AuthLink = () => {
     };
   }, [dropDown]);
 
-  const socialIcons = [
-    "/facebook.png",
-    "/instagram.png",
-    "/tiktok.png",
-    "/youtube.png",
-  ];
   const navLinks = [
     {
       to: "/",
@@ -129,7 +123,7 @@ const AuthLink = () => {
           )}
         </>
       )}
-      <span onClick={() => setMobileNav(true)} className="text-dark md:hidden">
+      <span onClick={() => setMobileNav(true)} className="text-dark2 dark:text-white md:hidden">
         {mobileNav === false && <FaBars size={25} />}
       </span>
       <div
@@ -139,7 +133,7 @@ const AuthLink = () => {
       >
         <div
           ref={modalRef}
-          className="flex flex-col h-full bg-white gap-5 p-4 w-[250px]"
+          className="flex flex-col h-full bg-white dark:bg-dark2 gap-5 p-4 w-[250px]"
         >
           <div className="w-full flex items-center justify-end">
             <span className="text-dark" onClick={() => setMobileNav(false)}>
@@ -175,7 +169,7 @@ const AuthLink = () => {
                 Write
               </Link>
             )}
-            <div className="flex flex-wrap items-center justify-start gap-2">
+            {/* <div className="flex flex-wrap items-center justify-start gap-2">
               {socialIcons.map((item, index) => (
                 <Image
                   src={item}
@@ -186,7 +180,7 @@ const AuthLink = () => {
                   onClick={() => setMobileNav(false)}
                 />
               ))}
-            </div>
+            </div> */}
           </nav>
         </div>
       </div>
