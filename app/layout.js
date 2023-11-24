@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
 import AuthProvider from "@/providers/AuthProvider";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,18 +13,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <AuthProvider>
-          <main className="min-h-screen bg-softbg text-black">
-            <div className="w-[90%] lg:w-[85%] mx-auto">
-              <Navbar />
-              {children}
-              <Footer />
-            </div>
-          </main>
-        </AuthProvider>
-      </body>
-    </html>
+    <ThemeProvider attribute="class">
+      <html lang="en">
+        <body className={inter.className}>
+          <AuthProvider>
+            <main className="min-h-screen bg-softbg text-black">
+              <div className="w-[90%] lg:w-[85%] mx-auto">
+                <Navbar />
+                {children}
+                <Footer />
+              </div>
+            </main>
+          </AuthProvider>
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
