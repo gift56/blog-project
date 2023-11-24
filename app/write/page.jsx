@@ -14,11 +14,11 @@ import {
 import { app } from "@/utils/firebase";
 import dynamic from "next/dynamic";
 
+export const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
 
-  const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
