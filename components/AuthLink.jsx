@@ -43,15 +43,7 @@ const AuthLink = () => {
   const navLinks = [
     {
       to: "/",
-      text: "Homepage",
-    },
-    {
-      to: "/",
-      text: "Contact",
-    },
-    {
-      to: "/",
-      text: "About",
+      text: "Blog",
     },
   ];
 
@@ -123,7 +115,10 @@ const AuthLink = () => {
           )}
         </>
       )}
-      <span onClick={() => setMobileNav(true)} className="text-dark2 dark:text-white md:hidden">
+      <span
+        onClick={() => setMobileNav(true)}
+        className="text-dark2 dark:text-white md:hidden"
+      >
         {mobileNav === false && <FaBars size={25} />}
       </span>
       <div
@@ -136,7 +131,10 @@ const AuthLink = () => {
           className="flex flex-col h-full bg-white dark:bg-dark2 gap-5 p-4 w-[250px]"
         >
           <div className="w-full flex items-center justify-end">
-            <span className="text-dark" onClick={() => setMobileNav(false)}>
+            <span
+              className="text-dark2 dark:text-white"
+              onClick={() => setMobileNav(false)}
+            >
               <MdClose size={25} />
             </span>
           </div>
