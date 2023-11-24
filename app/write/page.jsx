@@ -25,10 +25,13 @@ const WritePage = () => {
   const [title, setTitle] = useState("");
   const [catSlug, setCatSlug] = useState("");
   const [sending, setSending] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     const storage = getStorage(app);
     const upload = () => {
+      setUploading(true);
       const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, name);
 
@@ -40,6 +43,7 @@ const WritePage = () => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log("Upload is " + progress + "% done");
+          setProgress(progress);
           switch (snapshot.state) {
             case "paused":
               console.log("Upload is paused");
@@ -49,10 +53,14 @@ const WritePage = () => {
               break;
           }
         },
-        (error) => {},
+        (error) => {
+          setUploading(false);
+          alert(error);
+        },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
+            setUploading(false);
           });
         }
       );
@@ -142,7 +150,18 @@ const WritePage = () => {
         >
           <GoPlus size={20} />
         </button>
-        {file && <p className="text-sm md:text-lg text-dark">{file.name}</p>}
+        {uploading === true ? (
+          <div className="flex items-center justify-start gap-2">
+            <img
+              src="/loader.svg"
+              alt="loader"
+              className="w-full h-full object-cover"
+            />
+            <span className="text-base font-medium">{progress}%</span>
+          </div>
+        ) : (
+          <p className="text-sm md:text-lg text-dark">{file.name}</p>
+        )}
         {open && (
           <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] pl-4 transition-all duration-300">
             <input
@@ -152,18 +171,27 @@ const WritePage = () => {
               style={{ display: "none" }}
               accept="image/*"
             />
-            <button type="button" className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
-              <label htmlFor="image" >
+            <button
+              type="button"
+              className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary"
+            >
+              <label htmlFor="image">
                 <GoImage size={20} />
               </label>
             </button>
             <label htmlFor="image">
-              <button type="button" className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
+              <button
+                type="button"
+                className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary"
+              >
                 <GoUpload size={20} />
               </button>
             </label>
             <label htmlFor="image">
-              <button type="button" className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
+              <button
+                type="button"
+                className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary"
+              >
                 <GoVideo size={20} />
               </button>
             </label>
