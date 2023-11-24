@@ -19,7 +19,7 @@ const Card = ({ key, item }) => {
         </div>
       )}
       <div className="w-full lg:flex-1 flex flex-col items-start justify-start gap-6">
-        <p className="text-sm uppercase text-gray-500 md:text-base font-medium">
+        <p className="text-sm uppercase text-dark dark:text-[#C0C5D0] md:text-base font-medium">
           <span>{item.createdAt.substring(0, 10)}</span> -{" "}
           <span className="text-primary font-semibold">{item.catSlug}</span>
         </p>
