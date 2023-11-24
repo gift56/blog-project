@@ -52,7 +52,9 @@ const AuthLink = () => {
       {!data ? (
         <Link
           href="/login"
-          className="hidden md:flex h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300"
+          className={`hidden md:flex h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300 ${
+            pathname === "/login" ? "before:w-full" : "before:w-[0%]"
+          }`}
         >
           Login
         </Link>
@@ -60,7 +62,9 @@ const AuthLink = () => {
         <>
           <Link
             href="/write"
-            className="hidden md:flex h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:w-[0%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300"
+            className={`hidden md:flex h-full text-lg font-normal relative before:content-[''] before:absolute before:bottom-[-9px] before:left-[50%] before:translate-x-[-50%] before:h-[2px] before:bg-primary hover:before:w-full before:transition-all before:duration-200 transition-all duration-300 ${
+              pathname === "/write" ? "before:w-full" : "before:w-[0%]"
+            }`}
           >
             Write
           </Link>
@@ -145,7 +149,11 @@ const AuthLink = () => {
                 href={item.to}
                 key={index}
                 onClick={() => setMobileNav(false)}
-                className="text-lg font-normal"
+                className={`text-lg font-normal ${
+                  pathname === item.to
+                    ? "border-b border-primary"
+                    : "border-none"
+                }`}
               >
                 {item.text}
               </Link>
@@ -153,7 +161,11 @@ const AuthLink = () => {
             {status && status === "unauthenticated" ? (
               <Link
                 href="/login"
-                className="text-lg font-normal"
+                className={`text-lg font-normal ${
+                  pathname === "/login"
+                    ? "border-b border-primary"
+                    : "border-none"
+                }`}
                 onClick={() => setMobileNav(false)}
               >
                 Login
@@ -161,7 +173,11 @@ const AuthLink = () => {
             ) : (
               <Link
                 href="/write"
-                className="text-lg font-normal"
+                className={`text-lg font-normal ${
+                  pathname === "/write"
+                    ? "border-b border-primary"
+                    : "border-none"
+                }`}
                 onClick={() => setMobileNav(false)}
               >
                 Write
