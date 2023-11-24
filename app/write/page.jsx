@@ -24,6 +24,7 @@ const WritePage = () => {
   const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
   const [catSlug, setCatSlug] = useState("");
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     const storage = getStorage(app);
@@ -86,6 +87,7 @@ const WritePage = () => {
       .replace(/^-+|-+$/g, "");
 
   const handleSubmit = async () => {
+    setSending(true);
     const res = await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({
@@ -99,6 +101,7 @@ const WritePage = () => {
 
     if (res.status === 200) {
       const data = await res.json();
+      setSending(false);
       router.push(`/post/${data.slug}`);
     }
   };
@@ -139,6 +142,7 @@ const WritePage = () => {
         >
           <GoPlus size={20} />
         </button>
+        {file && <p className="text-sm text-dark">{file.name}</p>}
         {open && (
           <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] pl-4 transition-all duration-300">
             <input
@@ -166,7 +170,7 @@ const WritePage = () => {
           </div>
         )}
         <ReactQuill
-          className="w-full flex-grow"
+          className="w-full"
           theme="bubble"
           value={value}
           onChange={setValue}
@@ -177,8 +181,15 @@ const WritePage = () => {
         disabled={disableBtn}
         type="submit"
         onClick={handleSubmit}
-        className="absolute top-0 right-0 bg-primary text-white py-2 px-6 border-primary border rounded-2xl disabled:bg-primary/50 disabled:cursor-not-allowed"
+        className="absolute top-0 right-0 bg-primary text-white py-2 px-6 border-primary border rounded-2xl disabled:bg-primary/50 disabled:cursor-not-allowed flex items-center justify-center"
       >
+        <div className={`w-10 ${sending ? "inline-block" : "hidden"}`}>
+          <img
+            src="/loader.svg"
+            alt="loader"
+            className="w-full h-full object-cover"
+          />
+        </div>
         Publish
       </button>
     </main>
