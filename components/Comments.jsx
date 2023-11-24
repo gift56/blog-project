@@ -2,8 +2,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-// import useSWR from "swr";
-// import { useSession } from "next-auth/react";
+import useSWR from "swr";
+import { useSession } from "next-auth/react";
+import { baseUrl } from "@/utils/config";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -18,9 +19,23 @@ const fetcher = async (url) => {
   return data;
 };
 
-const Comments = () => {
-  const status = "authenticateds";
+const Comments = ({ postSlug }) => {
+  const { status } = useSession();
+
+  const { data, mutate, isLoading } = useSWR(
+    `${baseUrl}/api/comments?postSlug=${postSlug}`,
+    fetcher
+  );
+
   const [desc, setDesc] = useState("");
+
+  const handleSubmit = async () => {
+    await fetch("/api/comments", {
+      method: "POST",
+      body: JSON.stringify({ desc, postSlug }),
+    });
+    mutate();
+  };
 
   return (
     <div className="w-full flex flex-col items-start justify-start gap-8">
@@ -35,7 +50,7 @@ const Comments = () => {
           <button
             type="submit"
             className="w-[100px] h-12 border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed transition-all duration-300"
-            onClick={() => {}}
+            onClick={handleSubmit}
           >
             Send
           </button>
@@ -49,32 +64,37 @@ const Comments = () => {
         </Link>
       )}
       <div className="flex flex-col items-start justify-start gap-4 w-full">
-        <div className="w-full flex flex-col gap-2 items-start justify-start">
-          <div className="w-full flex items-start justify-start gap-3">
-            <div className="w-12 h-12 md:w-14 md:h-14">
-              <Image
-                src="/p1.jpeg"
-                alt="author Profile Image"
-                width={70}
-                height={70}
-                className="object-cover !w-full !h-full rounded-full"
-              />
-            </div>
-            <div className="flex flex-col items-start justify-start gap-1">
-              <span className="text-lg font-medium md:text-xl text-dark">
-                John Doe
-              </span>
-              <span className="text-sm font-normal text-dark">
-                25 April 2023
-              </span>
-            </div>
-          </div>
-          <p className="text-base font-medium text-dark">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            ea quidem magnam voluptatibus! Debitis voluptatibus est eos ratione
-            inventore eligendi.
-          </p>
-        </div>
+        {isLoading
+          ? "Loading..."
+          : data.map((item) => (
+              <div
+                key={item._id}
+                className="w-full flex flex-col gap-2 items-start justify-start"
+              >
+                <div className="w-full flex items-start justify-start gap-3">
+                  {item?.user?.image && (
+                    <div className="w-12 h-12 md:w-14 md:h-14">
+                      <Image
+                        src="/p1.jpeg"
+                        alt="author Profile Image"
+                        width={70}
+                        height={70}
+                        className="object-cover !w-full !h-full rounded-full"
+                      />
+                    </div>
+                  )}
+                  <div className="flex flex-col items-start justify-start gap-1">
+                    <span className="text-lg font-medium md:text-xl text-dark">
+                      {item.user.name}
+                    </span>
+                    <span className="text-sm font-normal text-dark">
+                      {item.createdAt}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-base font-medium text-dark">{item.desc}</p>
+              </div>
+            ))}
       </div>
     </div>
   );

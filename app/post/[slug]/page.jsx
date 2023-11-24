@@ -1,9 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import { Comments, Menu } from "@/components";
+import { baseUrl } from "@/utils/config";
 
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`${baseUrl}/api/posts/${slug}`, {
     cache: "no-store",
   });
 
