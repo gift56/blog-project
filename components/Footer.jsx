@@ -28,19 +28,31 @@ const Footer = () => {
     {
       title: "Tags",
       links: [
-        { href: "/", text: "Style" },
-        { href: "/", text: "Fashion" },
-        { href: "/", text: "Coding" },
-        { href: "/", text: "Travel" },
+        { href: "/blog?cat=style", text: "Style", blank: false },
+        { href: "/blog?cat=fashion", text: "Fashion", blank: false },
+        { href: "/blog?cat=coding", text: "Coding", blank: false },
+        { href: "/blog?cat=travel", text: "Travel", blank: false },
       ],
     },
     {
       title: "Social",
       links: [
-        { href: "/", text: "Facebook" },
-        { href: "/", text: "Instagram" },
-        { href: "/", text: "Tiktok" },
-        { href: "/", text: "Youtube" },
+        { href: "https://twitter.com/AsiughuE", text: "Twitter", blank: true },
+        {
+          href: "https://www.instagram.com/giftedvibez20",
+          text: "Instagram",
+          blank: true,
+        },
+        {
+          href: "https://www.linkedin.com/in/efe-gift-109120241",
+          text: "Linkedin",
+          blank: true,
+        },
+        {
+          href: "https://www.youtube.com/channel/UCzCr1eZUtBoS_gscF27HV7Q",
+          text: "Youtube",
+          blank: true,
+        },
       ],
     },
   ];
@@ -83,7 +95,8 @@ const Footer = () => {
                 <Link
                   href={item.href}
                   key={index}
-                  className="text-base font-medium hover:boder-b hover:border-primary transition-all duration-300"
+                  target={item.blank === true ? "_blank" : "_self"}
+                  className="text-base font-medium hover:border-b border-primary transition-all duration-300 w-fit"
                 >
                   {item.text}
                 </Link>
