@@ -71,7 +71,7 @@ const WritePage = () => {
   ];
 
   if (status === "loading") {
-    return <div className="text-2xl text-dark">Loading...</div>;
+    return <div className="text-2xl">Loading...</div>;
   }
 
   if (status === "unauthenticated") {
