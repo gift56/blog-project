@@ -142,7 +142,7 @@ const WritePage = () => {
         >
           <GoPlus size={20} />
         </button>
-        {file && <p className="text-sm text-dark">{file.name}</p>}
+        {file && <p className="text-sm md:text-lg text-dark">{file.name}</p>}
         {open && (
           <div className="flex items-center gap-5 absolute z-40 w-full left-[50px] pl-4 transition-all duration-300">
             <input
@@ -181,7 +181,9 @@ const WritePage = () => {
         disabled={disableBtn}
         type="submit"
         onClick={handleSubmit}
-        className="absolute top-0 right-0 bg-primary text-white py-2 px-6 border-primary border rounded-2xl disabled:bg-primary/50 disabled:cursor-not-allowed flex items-center justify-center"
+        className={`absolute top-0 right-0 bg-primary text-white px-6 border-primary border rounded-2xl disabled:bg-primary/50 disabled:cursor-not-allowed flex items-center justify-center ${
+          sending ? "py-0" : "py-2"
+        }`}
       >
         <div className={`w-10 ${sending ? "inline-block" : "hidden"}`}>
           <img
