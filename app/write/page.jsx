@@ -113,11 +113,11 @@ const WritePage = () => {
   const disableBtn = !mediaValue && !valueValue && !titleValue;
 
   return (
-    <main className="w-full flex flex-col relative items-start justify-start gap-6 py-14">
+    <main className="w-full flex flex-col relative items-start justify-start gap-6 py-14 overflow-y-auto">
       <input
         type="text"
         placeholder="Title"
-        className="outline-none border-none bg-transparent py-10 text-darkBg w-full px-7 text-3xl font-medium md:text-5xl placeholder:text-[#b3b3b1]"
+        className="outline-none border-none bg-transparent py-10 w-full px-7 text-3xl font-medium md:text-5xl"
         onChange={(e) => setTitle(e.target.value)}
       />
       <div className="w-full flex flex-col items-start justify-start gap-2">
@@ -152,18 +152,18 @@ const WritePage = () => {
               style={{ display: "none" }}
               accept="image/*"
             />
-            <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
-              <label htmlFor="image">
+            <button type="button" className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
+              <label htmlFor="image" >
                 <GoImage size={20} />
               </label>
             </button>
             <label htmlFor="image">
-              <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
+              <button type="button" className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
                 <GoUpload size={20} />
               </button>
             </label>
             <label htmlFor="image">
-              <button className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
+              <button type="button" className="w-10 h-10 rounded-full flex items-center justify-center border border-primary bg-transparent text-primary">
                 <GoVideo size={20} />
               </button>
             </label>
