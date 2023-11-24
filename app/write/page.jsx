@@ -18,7 +18,7 @@ const WritePage = () => {
   const { status } = useSession();
   const router = useRouter();
 
-  const ReactQuill = dynamic(() => import("react-quill"));
+  const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
