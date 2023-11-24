@@ -145,7 +145,7 @@ const WritePage = () => {
       <div className="relative flex flex-col items-start gap-6 h-[700px] w-full">
         <button
           type="button"
-          className="w-10 h-10 rounded-full flex items-center justify-center border border-darkBg bg-transparent"
+          className="w-10 h-10 rounded-full flex items-center justify-center border border-darkBg dark:border-white bg-transparent"
           onClick={() => setOpen(!open)}
         >
           <GoPlus size={20} />

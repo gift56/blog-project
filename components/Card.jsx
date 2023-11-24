@@ -30,7 +30,7 @@ const Card = ({ key, item }) => {
         </h3>
         <div
           className="text-sm md:text-base font-normal text-dark dark:text-[#C0C5D0]"
-          dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 60) }}
+          dangerouslySetInnerHTML={{ __html: item?.desc.substring(0, 60).concat("","...") }}
         />
         <Link
           href={`/post/${item.slug}`}
