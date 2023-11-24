@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,7 +26,7 @@ const Card = ({ key, item }) => {
           <span className="text-primary font-semibold">{item.catSlug}</span>
         </p>
         <h3 className="text-2xl font-semibold md:text-4xl">
-          {item.title}
+          {item.title.substring(0, 50)}
         </h3>
         <div
           className="text-sm md:text-base font-normal text-dark dark:text-[#C0C5D0]"

@@ -39,7 +39,9 @@ const Comments = ({ postSlug }) => {
 
   return (
     <div className="w-full flex flex-col items-start justify-start gap-8">
-      <h3 className="text-2xl font-bold text-dark dark:text-[#C0C5D0] md:text-3xl">Comments</h3>
+      <h3 className="text-2xl font-bold text-dark dark:text-[#C0C5D0] md:text-3xl">
+        Comments
+      </h3>
       {status === "authenticated" ? (
         <div className="w-full flex items-end justify-between gap-5">
           <textarea
@@ -49,6 +51,7 @@ const Comments = ({ postSlug }) => {
           />
           <button
             type="submit"
+            disabled={descdesc.length <= 0}
             className="w-[100px] h-12 border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-[#dc143c79] disabled:border-[#dc143c79] disabled:cursor-not-allowed transition-all duration-300"
             onClick={handleSubmit}
           >
