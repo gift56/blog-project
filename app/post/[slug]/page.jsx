@@ -24,7 +24,7 @@ const PostDetailPage = async ({ params }) => {
     <main className="w-full flex flex-col items-start justify-start gap-16 py-10">
       <div className="w-full flex flex-col lg:flex-row items-start justify-start gap-6">
         <div className="w-full lg:flex-1 flex flex-col items-start justify-start gap-8 md:gap-10">
-          <h1 className="text-3xl font-bold md:text-5xl text-darkBg">
+          <h1 className="text-3xl font-bold md:text-5xl text-darkText dark:text-white">
             {data?.title}
           </h1>
           <div className="w-full flex items-start justify-start gap-3">

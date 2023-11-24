@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Theme>
           <AuthProvider>
-            <main className="min-h-screen bg-white text-darkText">
+            <main className="min-h-screen bg-white text-darkText dark:bg-darkBg dark:text-white">
               <div className="w-[90%] lg:w-[85%] mx-auto">
                 <Navbar />
                 {children}

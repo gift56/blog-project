@@ -40,7 +40,7 @@ const Navbar = () => {
       </div> */}
       <Link
         href="/"
-        className="select-none text-2xl font-bold md:text-3xl text-black"
+        className="select-none text-2xl font-bold md:text-3xl"
       >
         Devblog
       </Link>
