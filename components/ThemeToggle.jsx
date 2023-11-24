@@ -1,9 +1,14 @@
 "use client";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 
 const ThemeToggle = () => {
+  const [mount, setMount] = useState(false);
   const { systemTheme, theme, setTheme } = useTheme();
+  useEffect(() => {
+    setMount(true);
+  }, []);
 
   const currentTheme = theme === "system" ? systemTheme : theme;
 
@@ -19,7 +24,7 @@ const ThemeToggle = () => {
       />
       <div
         className={`w-[20px] h-[20px] rounded-full absolute bg-white dark:bg-dark2 ${
-          currentTheme === "dark" ? "right-[50px]" : " right-2"
+          mount === true && currentTheme === "dark" ? "right-[50px]" : " right-2"
         } transition-all duration-300`}
       ></div>
       <Image
