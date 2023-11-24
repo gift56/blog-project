@@ -67,7 +67,7 @@ const PostDetailPage = async ({ params }) => {
             className="text-base font-normal text-gray md:text-lg"
             dangerouslySetInnerHTML={{ __html: data?.desc }}
           />
-          <Comments />
+          <Comments postSlug={slug}/>
         </div>
         <Menu />
       </div>
