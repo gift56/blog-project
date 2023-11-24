@@ -45,7 +45,6 @@ const Navbar = () => {
         Devblog
       </Link>
       <nav className="flex items-center justify-center gap-4">
-        <ThemeToggle />
         {navLinks.map((item) => (
           <Link
             key={item.text}
@@ -56,6 +55,7 @@ const Navbar = () => {
           </Link>
         ))}
         <AuthLink />
+        <ThemeToggle />
       </nav>
     </header>
   );
