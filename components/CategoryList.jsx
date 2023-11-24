@@ -1,21 +1,49 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { baseUrl } from "@/utils/config";
+import { useState, useEffect } from "react";
 
-const getData = async () => {
-  const res = await fetch(`${baseUrl}/api/categories`, {
-    cache: "no-store",
-  });
+// const getData = async () => {
+//   const res = await fetch(`${baseUrl}/api/categories`, {
+//     cache: "no-store",
+//   });
 
-  if (!res.ok) {
-    throw new Error("Failed");
-  }
+//   if (!res.ok) {
+//     throw new Error("Failed");
+//   }
 
-  return res.json();
-};
+//   return res.json();
+// };
 
-const CategoryList = async () => {
-  const data = await getData();
+const CategoryList = () => {
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(`${baseUrl}/api/categories`, {
+          cache: "no-store",
+        });
+
+        if (!res.ok) {
+          throw new Error("Failed");
+        }
+
+        const newData = await res.json();
+        setData(newData);
+      } catch (error) {
+        console.error("Error fetching cat data:", error);
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   const colorRender = (color) => {
     if (color === "style") {
@@ -32,12 +60,15 @@ const CategoryList = async () => {
       return "bg-[#5e4fff31]";
     }
   };
-
   return (
     <section className="py-9 w-full flex flex-col items-start justify-start gap-6">
       <h3 className="text-3xl font-semibold md:text-4xl">Popular Categories</h3>
       <div className="w-full flex flex-wrap justify-between gap-4 md:gap-4">
-        {data &&
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>Error:</p>
+        ) : (
           data?.map((item) => (
             <Link
               href={`/blog?cat=${item.slug}`}
@@ -57,7 +88,8 @@ const CategoryList = async () => {
                 {item.title}
               </span>
             </Link>
-          ))}
+          ))
+        )}
       </div>
     </section>
   );

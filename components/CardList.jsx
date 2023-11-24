@@ -68,8 +68,6 @@ const CardList = ({ page, cat }) => {
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
 
-  console.log(posts);
-
   return (
     <div className="w-full lg:flex-[2] flex flex-col items-start justify-start gap-6">
       <h2 className="text-2xl font-bold md:text-3xl">Recent Post</h2>
