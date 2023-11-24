@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Card, Pagination } from ".";
 import { baseUrl } from "@/utils/config";
+import { TbDatabaseOff } from "react-icons/tb";
 
 // const getData = async (page, cat) => {
 //   const res = await fetch(
@@ -73,8 +74,9 @@ const CardList = ({ page, cat }) => {
     <div className="w-full lg:flex-[2] flex flex-col items-start justify-start gap-6">
       <h2 className="text-2xl font-bold md:text-3xl">Recent Post</h2>
       <div className="w-full flex flex-col items-start justify-start gap-8">
-        {!data ? (
+        {data.length === 0 ? (
           <div className="flex flex-col items-center justify-center gap-6">
+            <TbDatabaseOff size={25} />
             <h4 className="text-2xl text-center md:text-4xl font-medium">
               No data on this!
             </h4>
