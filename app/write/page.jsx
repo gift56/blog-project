@@ -113,7 +113,7 @@ const WritePage = () => {
   const disableBtn = !mediaValue && !valueValue && !titleValue;
 
   return (
-    <main className="w-full flex flex-col relative items-start justify-start gap-6 py-14">
+    <main className="w-full flex flex-col relative items-start justify-start gap-6 py-14 overflow-y-auto overflow-x-hidden">
       <input
         type="text"
         placeholder="Title"
