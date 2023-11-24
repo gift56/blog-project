@@ -14,13 +14,16 @@ const getData = async (page, cat) => {
     throw new Error("Failed");
   }
 
-  return res.json();
+  const data = await res.json();
+
+  const reversedPosts = data.posts.reverse();
+  return { ...data, posts: reversedPosts };
 };
 
 const CardList = async ({ page, cat }) => {
   const { posts, count } = await getData(page, cat);
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = 8;
 
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
