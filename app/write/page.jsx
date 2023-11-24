@@ -118,7 +118,7 @@ const WritePage = () => {
   const valueValue = value.length > 0;
   const titleValue = title.length > 0;
 
-  const disableBtn = !mediaValue && !valueValue && !titleValue;
+  const disableBtn = !mediaValue || !valueValue || !titleValue;
 
   return (
     <main className="w-full flex flex-col relative items-start justify-start gap-6 py-14 overflow-y-auto overflow-x-hidden">
