@@ -5,23 +5,6 @@ import { Card, Pagination } from ".";
 import { baseUrl } from "@/utils/config";
 import { TbDatabaseOff } from "react-icons/tb";
 
-// const getData = async (page, cat) => {
-//   const res = await fetch(
-//     `${baseUrl}/api/posts?page=${page}&cat=${cat || ""}`,
-//     {
-//       cache: "no-store",
-//     }
-//   );
-
-//   if (!res.ok) {
-//     throw new Error("Failed");
-//   }
-
-//   const data = await res.json();
-
-//   const reversedPosts = data.posts.reverse();
-//   return { ...data, posts: reversedPosts };
-// };
 
 const CardList = ({ page, cat }) => {
   const [data, setData] = useState(null);

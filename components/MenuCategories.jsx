@@ -3,17 +3,6 @@ import { baseUrl } from "@/utils/config";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-// const getData = async () => {
-//   const res = await fetch(`${baseUrl}/api/categories`, {
-//     cache: "no-store",
-//   });
-
-//   if (!res.ok) {
-//     throw new Error("Failed");
-//   }
-
-//   return res.json();
-// };
 
 const MenuCategories = () => {
   const [data, setData] = useState(null);
