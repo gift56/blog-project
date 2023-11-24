@@ -1,14 +1,29 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "@/components";
 import AuthProvider from "@/providers/AuthProvider";
 import Theme from "@/providers/Theme";
+import { Inter } from "next/font/google";
+// import { Head } from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Dev Blog",
   description: "The best blog app!",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/favicon.png",
+        href: "/favicon.png",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/favicon.png",
+        href: "/favicon.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {

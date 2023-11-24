@@ -71,7 +71,7 @@ const MenuPost = ({ withImage }) => {
             <h3 className="text-base font-medium text">
               {item.title}
             </h3>
-            <p className="text-dark text-sm font-medium">
+            <p className="text-dark dark:text-[#C0C5D0] text-sm font-medium">
               <span>{item.author}</span>
               <span className="text-primary"> - {item.date}</span>
             </p>

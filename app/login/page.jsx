@@ -11,7 +11,7 @@ const LoginPage = () => {
   }
 
   if (status === "authenticated") {
-    router.push("/")
+    router.push("/");
   }
 
   return (
@@ -20,14 +20,14 @@ const LoginPage = () => {
         <button
           type="button"
           onClick={() => signIn("google")}
-          className="w-fit bg-white text-darkBg py-4 px-10 rounded-lg font-medium text-lg md:text-xl"
+          className="w-fit bg-white text-darkBg py-4 px-10 rounded-lg font-medium text-lg md:text-xl hover:opacity-80 transition-all duration-300"
         >
           Sign in with Google
         </button>
-        <button className="w-fit bg-darkBg text-white py-4 px-10 rounded-lg font-medium text-lg md:text-xl">
+        <button className="w-fit bg-darkBg text-white dark:bg-white dark:text-darkBg py-4 px-10 rounded-lg font-medium text-lg md:text-xl hover:opacity-80 transition-all duration-300">
           Sign in with Github
         </button>
-        <button className="w-fit bg-[#087bea] text-white py-4 px-6 md:px-10 rounded-lg font-medium text-lg md:text-xl">
+        <button className="w-fit bg-[#087bea] text-white py-4 px-6 rounded-lg font-medium text-lg md:text-xl hover:opacity-80 transition-all duration-300">
           Sign in with Facebook
         </button>
       </div>
