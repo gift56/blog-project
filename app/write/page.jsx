@@ -70,7 +70,7 @@ const WritePage = () => {
   ];
 
   if (status === "loading") {
-    return <div className={styles.loading}>Loading...</div>;
+    return <div className="text-2xl text-dark">Loading...</div>;
   }
 
   if (status === "unauthenticated") {
@@ -171,6 +171,7 @@ const WritePage = () => {
       </div>
       <button
         type="submit"
+        onClick={handleSubmit}
         className="absolute top-0 right-0 bg-primary text-white py-2 px-6 border-primary border rounded-2xl"
       >
         Publish
