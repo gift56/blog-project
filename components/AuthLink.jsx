@@ -6,6 +6,7 @@ import { FaBars } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { FiChevronDown, FiLogOut } from "react-icons/fi";
 import { signOut, useSession } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
 const AuthLink = () => {
   const { status, data } = useSession();
@@ -13,6 +14,7 @@ const AuthLink = () => {
   const [dropDown, setDropDown] = useState(false);
   const modalRef = useRef(null);
   const dropRef = useRef(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (event) => {

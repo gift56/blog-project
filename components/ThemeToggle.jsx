@@ -18,9 +18,9 @@ const ThemeToggle = () => {
         onClick={() => setTheme("dark")}
       />
       <div
-        className={`w-[20px] h-[20px] rounded-full absolute bg-white dark:bg-dark2 ${
+        className={`w-[20px] h-[20px] rounded-full absolute bg-white dark:bg-dark2 transition-all duration-300 ${
           currentTheme === "dark" ? "right-[50px]" : " right-2"
-        } transition-all duration-300`}
+        }`}
       ></div>
       <Image
         src="/sun.png"
