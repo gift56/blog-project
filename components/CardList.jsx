@@ -26,9 +26,9 @@ const CardList = ({ page, cat }) => {
 
         const newData = await res.json();
 
-        if (newData.posts) {
-          newData.posts.reverse();
-        }
+        // if (newData.posts) {
+        //   newData.posts.reverse();
+        // }
         setData(newData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -53,7 +53,7 @@ const CardList = ({ page, cat }) => {
 
   return (
     <div className="w-full lg:flex-[2] flex flex-col items-start justify-start gap-6">
-      <h2 className="text-2xl font-bold md:text-3xl">Recent Post</h2>
+      <h2 className="text-2xl font-bold md:text-3xl">Recent blog Post</h2>
       <div className="w-full flex flex-col items-start justify-start gap-8">
         {data.length === 0 ? (
           <div className="flex flex-col items-center justify-center gap-6">

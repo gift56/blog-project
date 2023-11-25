@@ -9,7 +9,7 @@ export default function Home({ searchParams }) {
       <CategoryList />
       <section className="flex flex-col lg:flex-row items-start justify-between gap-10 py-8">
         <CardList page={page} />
-        <Menu />
+        <Menu page={page} />
       </section>
     </main>
   );

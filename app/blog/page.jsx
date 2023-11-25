@@ -11,7 +11,7 @@ const BlogPage = ({ searchParams }) => {
       </h1>
       <section className="flex flex-col lg:flex-row items-start justify-between gap-10 py-8">
         <CardList page={page} cat={cat} />
-        <Menu />
+        <Menu page={page} cat={cat} />
       </section>
     </main>
   );

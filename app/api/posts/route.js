@@ -7,6 +7,8 @@ export const GET = async (req) => {
 
   const page = searchParams.get("page");
   const cat = searchParams.get("cat");
+  const sortByViewsParam = searchParams.get("sortByViews");
+  const sortByViews = sortByViewsParam === "true"; // Convert the string to a boolean
 
   const POST_PER_PAGE = 8;
 
@@ -17,6 +19,10 @@ export const GET = async (req) => {
     skip: skip >= 0 ? skip : 0,
     where: {
       ...(cat && { catSlug: cat }),
+    },
+    orderBy: {
+      ...(sortByViews === "true" && { views: "desc" }),
+      createdAt: "desc", // Order by createdAt in descending order
     },
   };
 

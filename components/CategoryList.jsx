@@ -5,7 +5,6 @@ import Link from "next/link";
 import { baseUrl } from "@/utils/config";
 import { useState, useEffect } from "react";
 
-
 const CategoryList = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -54,7 +53,7 @@ const CategoryList = () => {
       <h3 className="text-3xl font-semibold md:text-4xl">Popular Categories</h3>
       <div className="w-full flex flex-wrap justify-between gap-4 md:gap-4">
         {isLoading ? (
-          <p>Loading...</p>
+          <p>Loading Category...</p>
         ) : error ? (
           <p>Error:</p>
         ) : (
