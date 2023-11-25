@@ -46,7 +46,7 @@ const Comments = ({ postSlug }) => {
         <div className="w-full flex items-end justify-between gap-5">
           <textarea
             placeholder="write a comment..."
-            className="w-full h-[140px] border focus:border-primary outline-none p-3 rounded-lg resize-none bg-gray-600 text-dark2 dark:bg-dark2 dark:text-white"
+            className="w-full h-[140px] border focus:border-primary outline-none p-3 rounded-lg resize-none bg-gray-300 text-dark2 dark:bg-dark2 dark:text-white"
             onChange={(e) => setDesc(e.target.value)}
           />
           <button
