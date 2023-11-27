@@ -5,6 +5,7 @@ import Image from "next/image";
 import useSWR from "swr";
 import { useSession } from "next-auth/react";
 import { baseUrl } from "@/utils/config";
+import toast from "react-hot-toast";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
