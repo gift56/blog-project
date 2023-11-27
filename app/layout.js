@@ -1,5 +1,6 @@
+
 import "./globals.css";
-import { Footer, Navbar } from "@/components";
+import { Footer, Navbar,ToastContainer } from "@/components";
 import AuthProvider from "@/providers/AuthProvider";
 import Theme from "@/providers/Theme";
 import { Inter } from "next/font/google";
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
               </div>
             </main>
           </AuthProvider>
+          <ToastContainer />
         </Theme>
       </body>
     </html>

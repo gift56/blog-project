@@ -11,6 +11,7 @@ import MenuPost from "./MenuPost";
 import Navbar from "./Navbar";
 import Pagination from "./Pagination";
 import ThemeToggle from "./ThemeToggle";
+import ToastContainer from "./ToastContainer";
 
 export {
   AuthLink,
@@ -26,4 +27,5 @@ export {
   Navbar,
   Pagination,
   ThemeToggle,
+  ToastContainer,
 };

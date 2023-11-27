@@ -39,6 +39,10 @@ const Comments = ({ postSlug }) => {
     if (res.status === 200) {
       setSending(false);
       setDesc("");
+      toast.success("Comment created successfully!💡", {
+        duration: 3000,
+        position: "bottom-center",
+      });
     }
     mutate();
   };
@@ -59,7 +63,7 @@ const Comments = ({ postSlug }) => {
           <button
             type="submit"
             disabled={desc.length <= 0}
-            className={`w-[100px] h-12 border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-primary/40 disabled:border-primary/40 disabled:cursor-not-allowed transition-all duration-300 ${
+            className={`w-fit h-12 px-4 flex items-center justify-center gap-2 border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-primary/40 disabled:border-primary/40 disabled:cursor-not-allowed transition-all duration-300 ${
               sending ? "py-0" : "py-2"
             }`}
             onClick={handleSubmit}
