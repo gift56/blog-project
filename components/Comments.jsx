@@ -20,6 +20,7 @@ const fetcher = async (url) => {
 };
 
 const Comments = ({ postSlug }) => {
+  const [sending, setSending] = useState(false);
   const { status } = useSession();
 
   const { data, mutate, isLoading } = useSWR(
@@ -30,10 +31,15 @@ const Comments = ({ postSlug }) => {
   const [desc, setDesc] = useState("");
 
   const handleSubmit = async () => {
-    await fetch("/api/comments", {
+    setSending(true);
+    const res = await fetch("/api/comments", {
       method: "POST",
       body: JSON.stringify({ desc, postSlug }),
     });
+    if (res.status === 200) {
+      setSending(false);
+      setDesc("");
+    }
     mutate();
   };
 
@@ -47,14 +53,24 @@ const Comments = ({ postSlug }) => {
           <textarea
             placeholder="write a comment..."
             className="w-full h-[140px] border focus:border-primary outline-none p-3 rounded-lg resize-none bg-gray-300 text-dark2 dark:bg-dark2 dark:text-white"
+            value={desc}
             onChange={(e) => setDesc(e.target.value)}
           />
           <button
             type="submit"
             disabled={desc.length <= 0}
-            className="w-[100px] h-12 border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-primary/40 disabled:border-primary/40 disabled:cursor-not-allowed transition-all duration-300"
+            className={`w-[100px] h-12 border border-primary rounded-lg bg-primary text-white hover:bg-primary/60 disabled:bg-primary/40 disabled:border-primary/40 disabled:cursor-not-allowed transition-all duration-300 ${
+              sending ? "py-0" : "py-2"
+            }`}
             onClick={handleSubmit}
           >
+            <div className={`w-10 ${sending ? "inline-block" : "hidden"}`}>
+              <img
+                src="/loader.svg"
+                alt="loader"
+                className="w-full h-full object-cover"
+              />
+            </div>
             Send
           </button>
         </div>
@@ -69,7 +85,7 @@ const Comments = ({ postSlug }) => {
       <div className="flex flex-col items-start justify-start gap-4 w-full">
         {isLoading
           ? "Loading..."
-          : data.map((item) => (
+          : data?.map((item) => (
               <div
                 key={item._id}
                 className="w-full flex flex-col gap-2 items-start justify-start"
@@ -87,15 +103,17 @@ const Comments = ({ postSlug }) => {
                     </div>
                   )}
                   <div className="flex flex-col items-start justify-start gap-1">
-                    <span className="text-lg font-medium md:text-xl text-dark">
+                    <span className="text-lg font-medium md:text-xl text-dark dark:text-gray-100">
                       {item.user.name}
                     </span>
-                    <span className="text-sm font-normal text-dark">
+                    <span className="text-sm font-normal text-dark dark:text-gray-100">
                       {item.createdAt.substring(0, 10)}
                     </span>
                   </div>
                 </div>
-                <p className="text-base font-medium text-dark">{item.desc}</p>
+                <p className="text-base font-medium text-dark dark:text-gray-100">
+                  {item.desc}
+                </p>
               </div>
             ))}
       </div>

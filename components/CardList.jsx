@@ -63,7 +63,7 @@ const CardList = ({ page, cat }) => {
             </h4>
           </div>
         ) : (
-          posts.map((item) => <Card item={item} key={item._id} />)
+          posts?.map((item) => <Card item={item} key={item._id} />)
         )}
       </div>
       <Pagination page={page} hasPrev={hasPrev} hasNext={hasNext} />
